@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>SOLOMON — Gold That Adds Volatility | gold.com.vc</title>
+<link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:#0a0600;font-family:'DM Sans',sans-serif}
+#app{width:100%;height:100%;position:relative}
+canvas{display:block}
+
+/* Overlay UI */
+.overlay{
+  position:fixed;inset:0;z-index:10;pointer-events:none;
+  display:flex;flex-direction:column;
+}
+.overlay *{pointer-events:auto}
+
+/* Nav */
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 40px;
+  background:linear-gradient(to bottom, rgba(10,6,0,0.9), transparent);
+  backdrop-filter:blur(12px);
+}
+.nav-logo{
+  display:flex;align-items:center;
+}
+.nav-logo img{
+  height:48px;
+  width:auto;
+  filter:drop-shadow(0 0 15px #ffd700);
+}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  color:rgba(255,215,0,0.75);text-decoration:none;font-size:14px;
+  font-weight:600;transition:color 0.2s;letter-spacing:0.4px;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  background:rgba(255,215,0,0.15);border:2px solid #ffd700;
+  color:#fff;padding:10px 28px;border-radius:9999px;font-size:14px;font-weight:700;
+  cursor:pointer;font-family:'Syne',sans-serif;transition:all 0.3s;
+  text-decoration:none;backdrop-filter:blur(12px);box-shadow:0 0 20px rgba(255,215,0,0.3);
+}
+.nav-cta:hover{background:#ffd700;color:#0a0600;transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,215,0,0.5)}
+
+/* Info */
+.info{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  font:12px/1.4 'JetBrains Mono',monospace;
+  color:rgba(255,215,0,0.3);pointer-events:none;
+  text-align:center;user-select:none;letter-spacing:1px;z-index:10;
+}
+
+/* Stats */
+.stats{
+  position:fixed;bottom:56px;left:50%;transform:translateX(-50%);
+  display:flex;gap:40px;z-index:10;pointer-events:none;
+}
+.stat{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#ffd700}
+.stat-lbl{font-size:11px;color:rgba(255,215,0,0.6);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+
+@media(max-width:768px){
+  .nav{padding:16px 20px}
+  .nav-links{display:none}
+  .stats{gap:20px;bottom:42px}
+  .nav-logo img{height:38px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<div class="overlay">
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" alt="SOLOMON" crossorigin="anonymous">
+    </a>
+    <div class="nav-links">
+      <a href="https://gold.com.vc/info" target="_blank" rel="noopener">Info</a>
+      <a href="https://gold.com.vc/contract" target="_blank" rel="noopener">Contract</a>
+      <a href="https://gold.com.vc/info" target="_blank" rel="noopener" class="nav-cta">Claim Partner Share</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Stats Bar -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">50%</div><div class="stat-lbl">REVENUE TO PARTNERS</div></div>
+  <div class="stat"><div class="stat-num">11.5g</div><div class="stat-lbl">PHYSICAL GOLD PER TOKEN</div></div>
+  <div class="stat"><div class="stat-num">24-40%+</div><div class="stat-lbl">EST. PARTNER YIELD</div></div>
+  <div class="stat"><div class="stat-num">2%</div><div class="stat-lbl">TRANSFER TAX → YOUR PROFIT</div></div>
+</div>
+
+<div class="info">drag to splash liquid gold • click to spawn bars • the fiat bubble is coming</div>
+
+<script type="module">
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js";
+
+/* Liquid Gold Metaball - Final Polish */
+var MAX_DROPLETS = 48;
+var FIXED_DT_MS = 8;
+var MAX_FRAME_DT_MS = 100;
+var MAX_CATCHUP = 6;
+
+var app = document.getElementById("app");
+var renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(2, devicePixelRatio||1));
+renderer.setSize(innerWidth, innerHeight);
+app.appendChild(renderer.domElement);
+
+var scene = new THREE.Scene();
+var camera = new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+
+var bgCanvas = document.createElement("canvas");
+var bgCtx = bgCanvas.getContext("2d");
+var bgTexture = new THREE.CanvasTexture(bgCanvas);
+bgTexture.minFilter = THREE.LinearFilter;
+bgTexture.magFilter = THREE.LinearFilter;
+
+var logoImg = new Image();
+logoImg.crossOrigin = "anonymous";
+logoImg.src = "https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png";
+logoImg.onload = drawBackground;
+
+function drawBackground(){
+  var w = renderer.domElement.width;
+  var h = renderer.domElement.height;
+  bgCanvas.width = w;
+  bgCanvas.height = h;
+
+  var grd = bgCtx.createLinearGradient(0, 0, w*0.4, h);
+  grd.addColorStop(0, "#0a0600");
+  grd.addColorStop(0.35, "#1c1205");
+  grd.addColorStop(0.7, "#2e1f0a");
+  grd.addColorStop(1, "#0f0a03");
+  bgCtx.fillStyle = grd;
+  bgCtx.fillRect(0,0,w,h);
+
+  bgCtx.save();
+  bgCtx.globalAlpha = 0.18;
+  var orbs = [{x:0.18,y:0.75},{x:0.82,y:0.22},{x:0.45,y:0.55},{x:0.12,y:0.18},{x:0.78,y:0.82}];
+  for(var i=0;i<orbs.length;i++){
+    var o=orbs[i];
+    var cx=w*o.x, cy=h*o.y;
+    var rg=bgCtx.createRadialGradient(cx,cy,0,cx,cy,w*0.55);
+    rg.addColorStop(0, "hsla(42,95%,65%,0.55)");
+    rg.addColorStop(1, "hsla(42,95%,65%,0)");
+    bgCtx.fillStyle=rg;
+    bgCtx.fillRect(0,0,w,h);
+  }
+  bgCtx.restore();
+
+  // Logo - balanced
+  if(logoImg.complete){
+    var logoScale = Math.min(0.38, w / 1350);
+    var logoW = Math.round(1080 * logoScale);
+    var logoH = logoW;
+    var logoY = h * 0.14;
+    bgCtx.save();
+    bgCtx.shadowColor = "#ffd700";
+    bgCtx.shadowBlur = 95;
+    bgCtx.drawImage(logoImg, w*0.5 - logoW*0.5, logoY, logoW, logoH);
+    bgCtx.restore();
+  }
+
+  // Bigger main title
+  bgCtx.fillStyle = "#ffd700";
+  bgCtx.textAlign = "center";
+  bgCtx.textBaseline = "middle";
+  var titleSize = Math.round(Math.min(w * 0.105, 140));
+  bgCtx.font = "800 " + titleSize + "px 'Syne', sans-serif";
+  bgCtx.shadowColor = "#ffd700";
+  bgCtx.shadowBlur = 40;
+  bgCtx.fillText("SOLOMON", w*0.5, h*0.57);
+
+  // Supporting text - smaller and cleaner
+  var tagSize = Math.round(w * 0.024);
+  bgCtx.font = "700 " + tagSize + "px 'DM Sans', sans-serif";
+  bgCtx.globalAlpha = 0.95;
+  bgCtx.fillStyle = "#fff";
+  bgCtx.fillText("GOLD IS KING.", w*0.5, h*0.57 + titleSize * 0.78);
+  
+  bgCtx.globalAlpha = 0.78;
+  bgCtx.fillText("ESPECIALLY DIGITAL GOLD.", w*0.5, h*0.57 + titleSize * 1.16);
+
+  bgCtx.globalAlpha = 1;
+  var subSize = Math.round(w * 0.0175);
+  bgCtx.font = "600 " + subSize + "px 'DM Sans', sans-serif";
+  bgCtx.fillStyle = "#ffd700";
+  bgCtx.fillText("WILL YOU BE READY WHEN THE FIAT BUBBLE BURSTS?", w*0.5, h*0.57 + titleSize * 1.72);
+
+  bgTexture.needsUpdate = true;
+}
+
+document.fonts.ready.then(drawBackground);
+drawBackground();
+
+/* Droplet System - Larger before popping */
+var MAX_ENTRIES = MAX_DROPLETS*2;
+var dropletBuf = new Float32Array(MAX_ENTRIES*4);
+var dropletTex = new THREE.DataTexture(dropletBuf, MAX_ENTRIES, 1, THREE.RGBAFormat, THREE.FloatType);
+dropletTex.minFilter = THREE.NearestFilter;
+dropletTex.magFilter = THREE.NearestFilter;
+
+var drops = [];
+var uid = 0;
+
+function spawn(x,y,r,vx=0,vy=0){
+  if(drops.length >= MAX_DROPLETS) return;
+  var area = Math.PI * r * r;
+  var angle = Math.random() * Math.PI * 2;
+  var spd = 0.00035 + Math.random() * 0.0009;
+  drops.push({
+    id: uid++,
+    x: x, y: y, r: r, area: area,
+    vx: vx || Math.cos(angle)*spd,
+    vy: vy || Math.sin(angle)*spd,
+    alive: true,
+    wanderAngle: Math.random()*Math.PI*2,
+    wanderSpeed: 0.35 + Math.random()*0.6,
+    softPrevX: x, softPrevY: y,
+    softOffX: 0, softOffY: 0,
+    softVelX: 0, softVelY: 0
+  });
+}
+
+for(var i = 0; i < 18; i++){
+  spawn((Math.random()-0.5)*0.75, (Math.random()-0.5)*0.55, 0.014 + Math.random()*0.028);
+}
+
+/* Gold Shader */
+var vertSrc = "void main(){ gl_Position = vec4(position, 1.0); }";
+var fragSrc = `precision highp float;
+#define MAX_N ${MAX_ENTRIES}
+uniform vec2 uRes;
+uniform sampler2D uData;
+uniform sampler2D uBg;
+uniform int uCount;
+uniform float uTime;
+void main(){
+  vec2 uv = gl_FragCoord.xy / uRes;
+  float asp = uRes.x / uRes.y;
+  vec2 p = (uv - 0.5) * vec2(asp, 1.0);
+  float field = 0.0;
+  vec2 grad = vec2(0.0);
+  vec2 lens = vec2(0.0);
+  float lensW = 0.0;
+  for(int i=0; i<MAX_N; i++){
+    if(i>=uCount) break;
+    vec4 d = texture2D(uData, vec2((float(i)+0.5)/float(MAX_N), 0.5));
+    vec2 c = d.xy;
+    float r = d.z;
+    if(r<0.001) continue;
+    vec2 delta = p - c;
+    float dSq = dot(delta,delta) + 1e-5;
+    float contrib = r*r/dSq;
+    field += contrib;
+    grad += -2.0*contrib/dSq*delta;
+    float w = r*r/(dSq + r*r);
+    lens += (c-p)*w;
+    lensW += w;
+  }
+  lens /= (lensW + 0.001);
+  float lensLen = length(lens);
+  float thr = 1.0;
+  float edge = smoothstep(thr-0.09, thr+0.04, field);
+  float refractStrength = 0.042;
+  float mappedLens = atan(lensLen*7.0)*refractStrength;
+  vec2 refractDir = (lensLen>1e-5) ? lens/lensLen : vec2(0.0);
+  float refractMask = smoothstep(thr-0.25, thr+1.6, field);
+  vec2 refractedUV = clamp(uv + refractDir*mappedLens*refractMask, 0.001, 0.999);
+  vec3 bgClean = texture2D(uBg, uv).rgb;
+  float gradLen = length(grad);
+  float nScale = atan(gradLen*0.6)*0.35;
+  vec2 nGrad = (gradLen>1e-4) ? (grad/gradLen)*nScale : vec2(0.0);
+  vec3 N = normalize(vec3(-nGrad, 1.0));
+  vec3 L = normalize(vec3(0.4,0.7,1.0));
+  vec3 V = vec3(0.0,0.0,1.0);
+  vec3 H = normalize(L+V);
+  float diff = max(dot(N,L),0.0);
+  float spec = pow(max(dot(N,H),0.0),220.0);
+  float cosTheta = max(dot(N,V),0.0);
+  float fresnel = 0.06 + 0.94*pow(1.0-cosTheta,4.0);
+  float rim = smoothstep(thr+0.55,thr,field)*edge;
+  float caStr = 0.0022*edge;
+  vec3 bgCA;
+  bgCA.r = texture2D(uBg, refractedUV + vec2(caStr,caStr*0.4)).r;
+  bgCA.g = texture2D(uBg, refractedUV).g;
+  bgCA.b = texture2D(uBg, refractedUV - vec2(caStr,caStr*0.4)).b;
+  float depth = smoothstep(thr,thr+3.5,field);
+  vec3 goldTint = mix(vec3(1.0,0.82,0.35), vec3(1.0,0.95,0.65), depth*0.5);
+  vec3 glassColor = bgCA*goldTint*(0.88+0.12*diff) + vec3(1.0)*spec*1.1 + vec3(1.0,0.9,0.6)*rim*0.35 + vec3(1.0)*fresnel*0.18;
+  float shadowField = smoothstep(thr-0.4,thr-0.08,field);
+  vec3 bg = bgClean*(1.0-shadowField*0.08);
+  float border = smoothstep(thr-0.12,thr-0.02,field)*(1.0-smoothstep(thr,thr+0.08,field))*0.4;
+  vec3 col = mix(bg, glassColor, edge);
+  col += vec3(1.0,0.92,0.55)*border;
+  gl_FragColor = vec4(col,1.0);
+}`;
+
+var mat = new THREE.ShaderMaterial({
+  vertexShader: vertSrc,
+  fragmentShader: fragSrc,
+  uniforms:{
+    uRes: {value: new THREE.Vector2(renderer.domElement.width, renderer.domElement.height)},
+    uData: {value: dropletTex},
+    uBg: {value: bgTexture},
+    uCount: {value: 0},
+    uTime: {value: 0}
+  }
+});
+scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), mat));
+
+/* Mouse & Physics */
+var aspect = innerWidth/innerHeight;
+var mouse = {x:999, y:999, active:false, down:false};
+var spawnCD = 0;
+
+renderer.domElement.addEventListener("pointermove", e => {
+  var rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((e.clientX - rect.left)/rect.width - 0.5) * aspect;
+  mouse.y = 0.5 - (e.clientY - rect.top)/rect.height;
+  mouse.active = true;
+});
+renderer.domElement.addEventListener("pointerdown", () => mouse.down = true);
+renderer.domElement.addEventListener("pointerup", () => mouse.down = false);
+renderer.domElement.addEventListener("pointerleave", () => {mouse.active = false; mouse.down = false;});
+
+window.addEventListener("resize", () => {
+  renderer.setSize(innerWidth, innerHeight);
+  aspect = innerWidth / innerHeight;
+  mat.uniforms.uRes.value.set(renderer.domElement.width, renderer.domElement.height);
+  drawBackground();
+});
+
+const DAMP = 0.992, MOUSE_R = 0.19, MOUSE_F = 0.0045;
+const TENSION_RANGE = 0.13, TENSION_F = 0.00045;
+const MERGE_RATIO = 0.61, SPLIT_SPEED = 0.014, SPLIT_MIN_R = 0.038;
+const MAX_SPEED = 0.016, BOUNCE = 0.42;
+const EDGE_MARGIN = 0.12; // Increased tolerance (50% more room before popping)
+
+function applyForces(){
+  for(let d of drops){
+    d.wanderAngle += (Math.random()-0.5)*d.wanderSpeed;
+    d.vx += Math.cos(d.wanderAngle)*0.000045;
+    d.vy += Math.sin(d.wanderAngle)*0.000045;
+    d.vx -= d.x * 0.000009;
+    d.vy -= d.y * 0.000009;
+    if(mouse.active){
+      let dx = d.x - mouse.x, dy = d.y - mouse.y;
+      let dSq = dx*dx + dy*dy;
+      let rr = MOUSE_R + d.r;
+      if(dSq < rr*rr && dSq > 1e-5){
+        let dist = Math.sqrt(dSq);
+        let s = 1 - dist/rr;
+        let f = s*s * MOUSE_F;
+        d.vx += (dx/dist) * f;
+        d.vy += (dy/dist) * f;
+      }
+    }
+  }
+  for(let i=0; i<drops.length; i++){
+    for(let j=i+1; j<drops.length; j++){
+      let a = drops[i], b = drops[j];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let dSq = dx*dx + dy*dy;
+      let rng = TENSION_RANGE + a.r + b.r;
+      if(dSq < rng*rng && dSq > 1e-5){
+        let dist = Math.sqrt(dSq);
+        let s = 1 - dist/rng;
+        let f = s * TENSION_F;
+        let fx = (dx/dist)*f, fy = (dy/dist)*f;
+        a.vx += fx; a.vy += fy;
+        b.vx -= fx; b.vy -= fy;
+      }
+    }
+  }
+}
+
+function integrate(){
+  for(let i = drops.length - 1; i >= 0; i--){
+    let d = drops[i];
+    let sp = Math.sqrt(d.vx*d.vx + d.vy*d.vy);
+    if(sp > MAX_SPEED){ let s = MAX_SPEED / sp; d.vx *= s; d.vy *= s; }
+    d.x += d.vx; d.y += d.vy;
+    d.vx *= DAMP; d.vy *= DAMP;
+
+    let wx = aspect*0.5, wy = 0.5;
+
+    // Burst only when really close to edge (50% more room)
+    if(d.x - d.r < -wx - EDGE_MARGIN || d.x + d.r > wx + EDGE_MARGIN ||
+       d.y - d.r < -wy - EDGE_MARGIN || d.y + d.r > wy + EDGE_MARGIN){
+      drops.splice(i, 1);
+      continue;
+    }
+
+    if(d.x - d.r < -wx){ d.x = -wx + d.r; d.vx = Math.abs(d.vx) * BOUNCE; }
+    if(d.x + d.r > wx){ d.x = wx - d.r; d.vx = -Math.abs(d.vx) * BOUNCE; }
+    if(d.y - d.r < -wy){ d.y = -wy + d.r; d.vy = Math.abs(d.vy) * BOUNCE; }
+    if(d.y + d.r > wy){ d.y = wy - d.r; d.vy = -Math.abs(d.vy) * BOUNCE; }
+  }
+}
+
+function mergeDroplets(){
+  for(let i=0; i<drops.length; i++){
+    let a = drops[i];
+    if(!a.alive) continue;
+    for(let j=i+1; j<drops.length; j++){
+      let b = drops[j];
+      if(!b.alive) continue;
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let dist = Math.sqrt(dx*dx + dy*dy);
+      if(dist < (a.r + b.r) * MERGE_RATIO){
+        let na = a.area + b.area;
+        a.x = (a.x*a.area + b.x*b.area)/na;
+        a.y = (a.y*a.area + b.y*b.area)/na;
+        a.vx = (a.vx*a.area + b.vx*b.area)/na;
+        a.vy = (a.vy*a.area + b.vy*b.area)/na;
+        a.r = Math.sqrt(na/Math.PI);
+        a.area = na;
+        b.alive = false;
+      }
+    }
+  }
+  drops = drops.filter(d => d.alive);
+}
+
+function splitDroplets(){
+  let add = [];
+  for(let d of drops){
+    if(d.r < SPLIT_MIN_R) continue;
+    let sp = Math.sqrt(d.vx*d.vx + d.vy*d.vy);
+    if(sp < SPLIT_SPEED) continue;
+    let ha = d.area * 0.5;
+    let nr = Math.sqrt(ha / Math.PI);
+    let nx = -d.vy / sp, ny = d.vx / sp;
+    let off = nr * 0.72;
+    d.r = nr; d.area = ha;
+    d.x -= nx * off; d.y -= ny * off;
+    add.push({
+      id: uid++,
+      x: d.x + nx*off*2,
+      y: d.y + ny*off*2,
+      r: nr,
+      area: ha,
+      vx: d.vx + nx*sp*0.38,
+      vy: d.vy + ny*sp*0.38,
+      alive: true,
+      wanderAngle: Math.random()*Math.PI*2,
+      wanderSpeed: 0.35 + Math.random()*0.55,
+      softPrevX: d.x + nx*off*2,
+      softPrevY: d.y + ny*off*2,
+      softOffX: 0, softOffY: 0,
+      softVelX: 0, softVelY: 0
+    });
+  }
+  for(let d of add) if(drops.length < MAX_DROPLETS) drops.push(d);
+}
+
+var autoTimer = 0;
+function autoSpawn(){
+  autoTimer += FIXED_DT_MS;
+  if(autoTimer > 1600 && drops.length < 14){
+    autoTimer = 0;
+    spawn((Math.random()-0.5)*aspect*0.65, (Math.random()-0.5)*0.62, 0.016 + Math.random()*0.032);
+  }
+}
+
+function mouseSpawn(){
+  if(!mouse.down || !mouse.active) return;
+  spawnCD -= FIXED_DT_MS;
+  if(spawnCD <= 0 && drops.length < MAX_DROPLETS){
+    spawnCD = 85;
+    spawn(mouse.x + (Math.random()-0.5)*0.025, mouse.y + (Math.random()-0.5)*0.022, 0.014 + Math.random()*0.018);
+  }
+}
+
+var SOFT_STIFFNESS = 0.24, SOFT_DAMPING = 0.58;
+function updateSoftBodies(){
+  for(let d of drops){
+    let dx = d.x - d.softPrevX;
+    let dy = d.y - d.softPrevY;
+    d.softVelX += (dx - d.softOffX) * SOFT_STIFFNESS;
+    d.softVelY += (dy - d.softOffY) * SOFT_STIFFNESS;
+    d.softVelX *= SOFT_DAMPING;
+    d.softVelY *= SOFT_DAMPING;
+    d.softOffX += d.softVelX;
+    d.softOffY += d.softVelY;
+    d.softPrevX = d.x;
+    d.softPrevY = d.y;
+  }
+}
+
+var simTime = 0;
+function fixedUpdate(){
+  simTime += FIXED_DT_MS;
+  applyForces();
+  integrate();
+  mergeDroplets();
+  splitDroplets();
+  updateSoftBodies();
+  autoSpawn();
+  mouseSpawn();
+}
+
+function sync(){
+  dropletBuf.fill(0);
+  let n = Math.min(drops.length, MAX_DROPLETS);
+  for(let i=0; i<n; i++){
+    let d = drops[i];
+    let idx = i*4;
+    dropletBuf[idx] = d.x; dropletBuf[idx+1] = d.y; dropletBuf[idx+2] = d.r; dropletBuf[idx+3] = 1;
+    let gi = (n + i)*4;
+    dropletBuf[gi] = d.x - d.softOffX * 3.8;
+    dropletBuf[gi+1] = d.y - d.softOffY * 3.8;
+    dropletBuf[gi+2] = d.r * 0.68;
+    dropletBuf[gi+3] = 1;
+  }
+  dropletTex.needsUpdate = true;
+  mat.uniforms.uCount.value = n * 2;
+}
+
+var last = performance.now();
+var acc = 0;
+var paused = false;
+
+document.addEventListener("visibilitychange", () => {
+  paused = document.hidden;
+  if(!paused) last = performance.now();
+});
+
+(function loop(){
+  if(paused){ requestAnimationFrame(loop); return; }
+  let now = performance.now();
+  let dt = Math.min(now - last, MAX_FRAME_DT_MS);
+  last = now;
+  acc += dt;
+  let g = 0;
+  while(acc >= FIXED_DT_MS && g < MAX_CATCHUP){
+    fixedUpdate();
+    acc -= FIXED_DT_MS;
+    g++;
+  }
+  if(g >= MAX_CATCHUP) acc = 0;
+
+  mat.uniforms.uTime.value = now * 0.001;
+  sync();
+  renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
