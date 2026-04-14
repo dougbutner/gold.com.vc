@@ -6,10 +6,10 @@
 <title>SOLOMON — Gold That Adds Volatility | gold.com.vc</title>
 <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden}
-body{background:#0a0600;font-family:'DM Sans',sans-serif}
+html,body{width:100%;height:100%}
+body.home-page{background:#0a0600;font-family:'DM Sans',sans-serif;overflow:hidden}
 #app{width:100%;height:100%;position:relative}
 canvas{display:block}
 
@@ -19,35 +19,6 @@ canvas{display:block}
   display:flex;flex-direction:column;
 }
 .overlay *{pointer-events:auto}
-
-/* Nav */
-.nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:20px 40px;
-  background:linear-gradient(to bottom, rgba(10,6,0,0.9), transparent);
-  backdrop-filter:blur(12px);
-}
-.nav-logo{
-  display:flex;align-items:center;
-}
-.nav-logo img{
-  height:48px;
-  width:auto;
-  filter:drop-shadow(0 0 15px #ffd700);
-}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{
-  color:rgba(255,215,0,0.75);text-decoration:none;font-size:14px;
-  font-weight:600;transition:color 0.2s;letter-spacing:0.4px;
-}
-.nav-links a:hover{color:#fff}
-.nav-cta{
-  background:rgba(255,215,0,0.15);border:2px solid #ffd700;
-  color:#fff;padding:10px 28px;border-radius:9999px;font-size:14px;font-weight:700;
-  cursor:pointer;font-family:'Syne',sans-serif;transition:all 0.3s;
-  text-decoration:none;backdrop-filter:blur(12px);box-shadow:0 0 20px rgba(255,215,0,0.3);
-}
-.nav-cta:hover{background:#ffd700;color:#0a0600;transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,215,0,0.5)}
 
 /* Info */
 .info{
@@ -67,39 +38,48 @@ canvas{display:block}
 .stat-lbl{font-size:11px;color:rgba(255,215,0,0.6);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
 
 @media(max-width:768px){
-  .nav{padding:16px 20px}
-  .nav-links{display:none}
   .stats{gap:20px;bottom:42px}
-  .nav-logo img{height:38px}
 }
 </style>
 </head>
-<body>
+<body class="home-page">
 <div id="app"></div>
 
 <div class="overlay">
-  <nav class="nav">
-    <a href="#" class="nav-logo">
+  <nav class="nav" data-mobile-nav>
+    <a href="index.html" class="nav-logo">
       <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" alt="SOLOMON" crossorigin="anonymous">
     </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
     <div class="nav-links">
-      <a href="https://gold.com.vc/info" target="_blank" rel="noopener">Info</a>
-      <a href="https://gold.com.vc/contract" target="_blank" rel="noopener">Contract</a>
-      <a href="https://gold.com.vc/info" target="_blank" rel="noopener" class="nav-cta">Claim Partner Share</a>
+      <a href="info.html">Types of Gold</a>
+      <a href="/contract" data-gated-target="/contract">Contract</a>
+      <a href="legal.html">Legal Disclaimers</a>
+      <a href="new-earth.html" class="nav-cta">Solomon&apos;s New Earth</a>
     </div>
   </nav>
+</div>
+
+<div class="home-investor-link">
+  <a href="/info" data-gated-target="/info">Investor Info</a>
 </div>
 
 <!-- Stats Bar -->
 <div class="stats">
   <div class="stat"><div class="stat-num">50%</div><div class="stat-lbl">REVENUE TO PARTNERS</div></div>
-  <div class="stat"><div class="stat-num">11.5g</div><div class="stat-lbl">PHYSICAL GOLD PER TOKEN</div></div>
+  <div class="stat"><div class="stat-num">11.4g</div><div class="stat-lbl">PHYSICAL GOLD PER TOKEN</div></div>
   <div class="stat"><div class="stat-num">24-40%+</div><div class="stat-lbl">EST. PARTNER YIELD</div></div>
   <div class="stat"><div class="stat-num">2%</div><div class="stat-lbl">TRANSFER TAX → YOUR PROFIT</div></div>
 </div>
 
 <div class="info">drag to splash liquid gold • click to spawn bars • the fiat bubble is coming</div>
 
+<script src="assets/js/nav.js" defer></script>
+<script src="assets/js/gate.js" defer></script>
 <script type="module">
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js";
 
