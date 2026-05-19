@@ -1,0 +1,507 @@
+{
+  "token": "SOLOMON",
+  "oappType": "OFT",
+  "network": "mainnet",
+  "phase": "a",
+  "lzTargetNetwork": "mainnet",
+  "shared": {
+    "evmOftContractName": "MyOFT_SOLOMON",
+    "evmOftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+    "layerZeroEndpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "oappDelegate": "0x901dcf82db70A09d1012873c03306B00725FEa23",
+    "erc20Name": "SOLOMON",
+    "erc20Symbol": "SOLOMON"
+  },
+  "pathway": {
+    "dvnRequiredLabel": "LayerZero Labs",
+    "optionalDvns": [],
+    "confirmations": {
+      "note": "Order may vary by direction; verify on-chain or LayerZero tooling.",
+      "blocks": [
+        15,
+        32
+      ]
+    },
+    "enforcedOptions": {
+      "evmToSolana": {
+        "lzReceive": {
+          "computeUnits": 200000,
+          "valueLamports": 2039280
+        }
+      },
+      "solanaToEvm": {
+        "lzReceive": {
+          "gas": 80000,
+          "value": 0
+        }
+      }
+    }
+  },
+  "solana": {
+    "cluster": "mainnet-beta",
+    "layerZeroEid": 30168,
+    "endpointV2": "76y77prsiCMvXMjuoZ5VRrhG5qYBrUMYTE5WgHqgjEn6",
+    "oftProgramId": "DMNergMJiPjFDB57gvVwxExirSw8J6xX6kvkw9WuUWxa",
+    "mint": "GoLDEDmbque3qd1xfmnzMtg7HMju8p4UoaRX1vBsehjA",
+    "oftStore": "6Es2BNCrYC3xsmtqSkYzhTiQJkyt9AkpkQTyTsY28CTK",
+    "mintAuthority": "6Es2BNCrYC3xsmtqSkYzhTiQJkyt9AkpkQTyTsY28CTK",
+    "escrow": "CNquMpmgVGyE1erqZgD1angAvzXQrZUdzi6odvDcS4d6",
+    "defaultAddressLookupTable": "AokBxha6VMLLgf97B5VYHEtqztamWmYERBmmFvjuTzJB",
+    "explorers": {
+      "oftStore": "https://solscan.io/account/6Es2BNCrYC3xsmtqSkYzhTiQJkyt9AkpkQTyTsY28CTK",
+      "mint": "https://solscan.io/token/GoLDEDmbque3qd1xfmnzMtg7HMju8p4UoaRX1vBsehjA",
+      "program": "https://solscan.io/account/DMNergMJiPjFDB57gvVwxExirSw8J6xX6kvkw9WuUWxa"
+    }
+  },
+  "evmChains": [
+    {
+      "name": "Ethereum",
+      "nativeChainId": 1,
+      "lzEid": 30101,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 24758667,
+      "deploymentTx": "0x8c700f6e553bb0a7c18d1aa2513fbaf8a1b09dff4e2ce7b255e508cd0d0be12a",
+      "explorerContract": "https://etherscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://etherscan.io/tx/0x8c700f6e553bb0a7c18d1aa2513fbaf8a1b09dff4e2ce7b255e508cd0d0be12a"
+    },
+    {
+      "name": "Arbitrum",
+      "nativeChainId": 42161,
+      "lzEid": 30110,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 446663823,
+      "deploymentTx": "0x43a25fa38fa482da7c4b3a6130da9664ee901752f21632d56184a5cabbb73a7f",
+      "explorerContract": "https://arbiscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://arbiscan.io/tx/0x43a25fa38fa482da7c4b3a6130da9664ee901752f21632d56184a5cabbb73a7f"
+    },
+    {
+      "name": "Optimism",
+      "nativeChainId": 10,
+      "lzEid": 30111,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 149566705,
+      "deploymentTx": "0xfab1ad0659dd39c9606385726d7351fc203afa9004705bda94df6d1a0374a15a",
+      "explorerContract": "https://optimistic.etherscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://optimistic.etherscan.io/tx/0xfab1ad0659dd39c9606385726d7351fc203afa9004705bda94df6d1a0374a15a"
+    },
+    {
+      "name": "Base",
+      "nativeChainId": 8453,
+      "lzEid": 30184,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 43971426,
+      "deploymentTx": "0x028388a46a4fdc70586f8ef324118f4c58c60f23cc360d08330af0c1f3ec79bd",
+      "explorerContract": "https://basescan.org/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://basescan.org/tx/0x028388a46a4fdc70586f8ef324118f4c58c60f23cc360d08330af0c1f3ec79bd"
+    },
+    {
+      "name": "BSC",
+      "nativeChainId": 56,
+      "lzEid": 30102,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 89297242,
+      "deploymentTx": "0xc76a3cca44d9ea0335c9f0d4cdf79b8f6c3f45e1911ffbebfbdd44310b823798",
+      "explorerContract": "https://bscscan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://bscscan.com/tx/0xc76a3cca44d9ea0335c9f0d4cdf79b8f6c3f45e1911ffbebfbdd44310b823798"
+    },
+    {
+      "name": "Polygon",
+      "nativeChainId": 137,
+      "lzEid": 30109,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 84806141,
+      "deploymentTx": "0x129289f4a95dad94a58381d072ad8d969c991810fb93fd4aa7fafa8158a9582f",
+      "explorerContract": "https://polygonscan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://polygonscan.com/tx/0x129289f4a95dad94a58381d072ad8d969c991810fb93fd4aa7fafa8158a9582f"
+    },
+    {
+      "name": "Avalanche",
+      "nativeChainId": 43114,
+      "lzEid": 30106,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 81526388,
+      "deploymentTx": "0x1a9f335a0d8283d357acb6d6d848f1af048009d3cff7067a1633ded0cba0044f",
+      "explorerContract": "https://snowtrace.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://snowtrace.io/tx/0x1a9f335a0d8283d357acb6d6d848f1af048009d3cff7067a1633ded0cba0044f"
+    },
+    {
+      "name": "Linea",
+      "nativeChainId": 59144,
+      "lzEid": 30183,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 30092890,
+      "deploymentTx": "0x7b4b3ce23fb095ac31efcbb9451b9a740e0ea5d5adffeed82c3418b514e1744b",
+      "explorerContract": "https://lineascan.build/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://lineascan.build/tx/0x7b4b3ce23fb095ac31efcbb9451b9a740e0ea5d5adffeed82c3418b514e1744b"
+    },
+    {
+      "name": "Mantle",
+      "nativeChainId": 5000,
+      "lzEid": 30181,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 93690855,
+      "deploymentTx": "0x5a8ddcf7646eaf68d1d9ea326d1f7ecd47b31679ba53ea31c9ea8846223fbdb4",
+      "explorerContract": "https://mantlescan.xyz/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://mantlescan.xyz/tx/0x5a8ddcf7646eaf68d1d9ea326d1f7ecd47b31679ba53ea31c9ea8846223fbdb4"
+    },
+    {
+      "name": "Blast",
+      "nativeChainId": 81457,
+      "lzEid": 30243,
+      "oftAddress": "0xd6562E260F5626Fb2345E82baad4E15352e6695F",
+      "deploymentBlock": 33351109,
+      "deploymentTx": "0x749ae51ead03a321a2330df8c7216cef8c637b61516b6247d8ee42961a80d252",
+      "explorerContract": "https://blastscan.io/address/0xd6562E260F5626Fb2345E82baad4E15352e6695F",
+      "explorerTx": "https://blastscan.io/tx/0x749ae51ead03a321a2330df8c7216cef8c637b61516b6247d8ee42961a80d252"
+    },
+    {
+      "name": "Scroll",
+      "nativeChainId": 534352,
+      "lzEid": 30214,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 33164870,
+      "deploymentTx": "0x28eb7e407d9444cd18ab7268ace60d8489e7410a374211701c6517093f9ca778",
+      "explorerContract": "https://scrollscan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://scrollscan.com/tx/0x28eb7e407d9444cd18ab7268ace60d8489e7410a374211701c6517093f9ca778"
+    },
+    {
+      "name": "Manta Pacific",
+      "nativeChainId": 169,
+      "lzEid": 30217,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 8128811,
+      "deploymentTx": "0x6895751e6068b4a9c725158878aff1abe8b98cf0287cd59e2a90d1c88f86f1c7",
+      "explorerContract": "https://pacific-explorer.manta.network/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://pacific-explorer.manta.network/tx/0x6895751e6068b4a9c725158878aff1abe8b98cf0287cd59e2a90d1c88f86f1c7"
+    },
+    {
+      "name": "opBNB",
+      "nativeChainId": 204,
+      "lzEid": 30202,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 129580610,
+      "deploymentTx": "0x57f8e1c1b3afe6dc9ff70e19a81c85ef6233a144aded0537c779a6450736c10c",
+      "explorerContract": "https://opbnb.bscscan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://opbnb.bscscan.com/tx/0x57f8e1c1b3afe6dc9ff70e19a81c85ef6233a144aded0537c779a6450736c10c"
+    },
+    {
+      "name": "Fraxtal",
+      "nativeChainId": 252,
+      "lzEid": 30255,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 34479357,
+      "deploymentTx": "0xadcd1dac1e16f7bc1d55d1d9d64fd94af69c958e6d8960dcb5d4e4032d4b9179",
+      "explorerContract": "https://fraxscan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://fraxscan.com/tx/0xadcd1dac1e16f7bc1d55d1d9d64fd94af69c958e6d8960dcb5d4e4032d4b9179"
+    },
+    {
+      "name": "Gnosis",
+      "nativeChainId": 100,
+      "lzEid": 30145,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 45592054,
+      "deploymentTx": "0x95fae2fa859f703c0489d9d77bedc2c2305495c391974c63ce30dbded77cd64a",
+      "explorerContract": "https://gnosisscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://gnosisscan.io/tx/0x95fae2fa859f703c0489d9d77bedc2c2305495c391974c63ce30dbded77cd64a"
+    },
+    {
+      "name": "Celo",
+      "nativeChainId": 42220,
+      "lzEid": 30125,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 63614769,
+      "deploymentTx": "0x9fd703e8ae483a088ddb529030a70fde964e9beda2395f8a3c1cb63392598ba8",
+      "explorerContract": "https://celoscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://celoscan.io/tx/0x9fd703e8ae483a088ddb529030a70fde964e9beda2395f8a3c1cb63392598ba8"
+    },
+    {
+      "name": "Moonbeam",
+      "nativeChainId": 1284,
+      "lzEid": 30126,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 15118522,
+      "deploymentTx": "0xe6e9f84f2dfec23900b018175a92ab7582c967cdffdc42fdfca6abf12a986126",
+      "explorerContract": "https://moonscan.io/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://moonscan.io/tx/0xe6e9f84f2dfec23900b018175a92ab7582c967cdffdc42fdfca6abf12a986126"
+    },
+    {
+      "name": "Harmony",
+      "nativeChainId": 1666600000,
+      "lzEid": 30116,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 87269476,
+      "deploymentTx": "0x49cdb957e43f1b25b6d723cde7347d8789363d77a9002526e43a3ccf3e3f36f8",
+      "explorerContract": "https://explorer.harmony.one/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://explorer.harmony.one/tx/0x49cdb957e43f1b25b6d723cde7347d8789363d77a9002526e43a3ccf3e3f36f8"
+    },
+    {
+      "name": "Kava",
+      "nativeChainId": 2222,
+      "lzEid": 30177,
+      "oftAddress": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "deploymentBlock": 20145046,
+      "deploymentTx": "0x735cc3689be5729326f689c17f12874b685b7c9aa9020ab78d016171b2b405cb",
+      "explorerContract": "https://kavascan.com/address/0x94b354665e70fD2A74594595197CEb4527c36d7C",
+      "explorerTx": "https://kavascan.com/tx/0x735cc3689be5729326f689c17f12874b685b7c9aa9020ab78d016171b2b405cb"
+    }
+  ],
+  "publicRpcDefaults": {
+    "RPC_URL_ETHEREUM": "https://ethereum-rpc.publicnode.com",
+    "RPC_URL_ARBITRUM": "https://arbitrum-one-rpc.publicnode.com",
+    "RPC_URL_OPTIMISM": "https://optimism-rpc.publicnode.com",
+    "RPC_URL_BASE": "https://base-rpc.publicnode.com",
+    "RPC_URL_BSC": "https://bsc-rpc.publicnode.com",
+    "RPC_URL_POLYGON": "https://polygon-bor-rpc.publicnode.com",
+    "RPC_URL_AVALANCHE": "https://avalanche-c-chain-rpc.publicnode.com",
+    "RPC_URL_SOLANA": "https://solana-rpc.publicnode.com"
+  },
+  "references": {
+    "layerZeroMetadataApi": "https://metadata.layerzero-api.com/v1/metadata",
+    "docsSolanaOapp": "https://docs.layerzero.network/v2/developers/solana/oapp/overview",
+    "docsPathways": "https://docs.layerzero.network/v2/get-started/create-lz-oapp/configuring-pathways"
+  },
+  "omnichainSnapshot": {
+    "snapshotUtc": "2026-04-12T21:06:49.691Z",
+    "project": "SOLOMON omnichain (LayerZero V2)",
+    "tokenSymbol": "SOLOMON",
+    "canonicalNote": "Solana is canonical; remote OFTs peer to the Solana OFT store identity.",
+    "solana": {
+      "layerZeroEid": 30168,
+      "endpointV2": "76y77prsiCMvXMjuoZ5VRrhG5qYBrUMYTE5WgHqgjEn6",
+      "oftProgramId": "DMNergMJiPjFDB57gvVwxExirSw8J6xX6kvkw9WuUWxa",
+      "oftStorePubkey": "6Es2BNCrYC3xsmtqSkYzhTiQJkyt9AkpkQTyTsY28CTK",
+      "mintPubkey": "GoLDEDmbque3qd1xfmnzMtg7HMju8p4UoaRX1vBsehjA",
+      "mintAuthorityPubkey": "6Es2BNCrYC3xsmtqSkYzhTiQJkyt9AkpkQTyTsY28CTK",
+      "escrowPubkey": "CNquMpmgVGyE1erqZgD1angAvzXQrZUdzi6odvDcS4d6"
+    },
+    "sharedEvmConstructorHints": {
+      "endpointV2Default": "0x1a44076050125825900e736c501f859c50fE728c",
+      "delegate": "0x901dcf82db70A09d1012873c03306B00725FEa23"
+    },
+    "crossChainPeerBytes": {
+      "stellarOftId32": "0xa63664ea6641c18cb4dbc63eb6dbcf25e35c30d06821f870b9d5b14ac86a7f39",
+      "stellarToEvmLeftPaddedEvmOft": "00000000000000000000000094b354665e70fd2a74594595197ceb4527c36d7c",
+      "solanaOftStorePeer32ExampleFromOpsLog": "4dd78b164b5a556d0eeb2f07e704a7955d02701cec7210e2e9bda2977386828a"
+    },
+    "evmChains": [
+      {
+        "name": "Ethereum",
+        "lzEid": 30101,
+        "chainId": 1,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x8c700f6e553bb0a7c18d1aa2513fbaf8a1b09dff4e2ce7b255e508cd0d0be12a",
+        "deployBlock": 24758667
+      },
+      {
+        "name": "Arbitrum",
+        "lzEid": 30110,
+        "chainId": 42161,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x43a25fa38fa482da7c4b3a6130da9664ee901752f21632d56184a5cabbb73a7f",
+        "deployBlock": 446663823
+      },
+      {
+        "name": "Optimism",
+        "lzEid": 30111,
+        "chainId": 10,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0xfab1ad0659dd39c9606385726d7351fc203afa9004705bda94df6d1a0374a15a",
+        "deployBlock": 149566705
+      },
+      {
+        "name": "Base",
+        "lzEid": 30184,
+        "chainId": 8453,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x028388a46a4fdc70586f8ef324118f4c58c60f23cc360d08330af0c1f3ec79bd",
+        "deployBlock": 43971426
+      },
+      {
+        "name": "BSC",
+        "lzEid": 30102,
+        "chainId": 56,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0xc76a3cca44d9ea0335c9f0d4cdf79b8f6c3f45e1911ffbebfbdd44310b823798",
+        "deployBlock": 89297242
+      },
+      {
+        "name": "Polygon",
+        "lzEid": 30109,
+        "chainId": 137,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x129289f4a95dad94a58381d072ad8d969c991810fb93fd4aa7fafa8158a9582f",
+        "deployBlock": 84806141
+      },
+      {
+        "name": "Avalanche",
+        "lzEid": 30106,
+        "chainId": 43114,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x1a9f335a0d8283d357acb6d6d848f1af048009d3cff7067a1633ded0cba0044f",
+        "deployBlock": 81526388
+      },
+      {
+        "name": "Linea",
+        "lzEid": 30183,
+        "chainId": 59144,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x7b4b3ce23fb095ac31efcbb9451b9a740e0ea5d5adffeed82c3418b514e1744b",
+        "deployBlock": 30092890
+      },
+      {
+        "name": "Mantle",
+        "lzEid": 30181,
+        "chainId": 5000,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x5a8ddcf7646eaf68d1d9ea326d1f7ecd47b31679ba53ea31c9ea8846223fbdb4",
+        "deployBlock": 93690855
+      },
+      {
+        "name": "Blast",
+        "lzEid": 30243,
+        "chainId": 81457,
+        "myOftSolomon": "0xd6562E260F5626Fb2345E82baad4E15352e6695F",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x749ae51ead03a321a2330df8c7216cef8c637b61516b6247d8ee42961a80d252",
+        "deployBlock": 33351109
+      },
+      {
+        "name": "Scroll",
+        "lzEid": 30214,
+        "chainId": 534352,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x28eb7e407d9444cd18ab7268ace60d8489e7410a374211701c6517093f9ca778",
+        "deployBlock": 33164870
+      },
+      {
+        "name": "Manta Pacific",
+        "lzEid": 30217,
+        "chainId": 169,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x6895751e6068b4a9c725158878aff1abe8b98cf0287cd59e2a90d1c88f86f1c7",
+        "deployBlock": 8128811
+      },
+      {
+        "name": "opBNB",
+        "lzEid": 30202,
+        "chainId": 204,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x57f8e1c1b3afe6dc9ff70e19a81c85ef6233a144aded0537c779a6450736c10c",
+        "deployBlock": 129580610
+      },
+      {
+        "name": "Fraxtal",
+        "lzEid": 30255,
+        "chainId": 252,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0xadcd1dac1e16f7bc1d55d1d9d64fd94af69c958e6d8960dcb5d4e4032d4b9179",
+        "deployBlock": 34479357
+      },
+      {
+        "name": "Gnosis",
+        "lzEid": 30145,
+        "chainId": 100,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x95fae2fa859f703c0489d9d77bedc2c2305495c391974c63ce30dbded77cd64a",
+        "deployBlock": 45592054
+      },
+      {
+        "name": "Celo",
+        "lzEid": 30125,
+        "chainId": 42220,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x9fd703e8ae483a088ddb529030a70fde964e9beda2395f8a3c1cb63392598ba8",
+        "deployBlock": 63614769
+      },
+      {
+        "name": "Moonbeam",
+        "lzEid": 30126,
+        "chainId": 1284,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0xe6e9f84f2dfec23900b018175a92ab7582c967cdffdc42fdfca6abf12a986126",
+        "deployBlock": 15118522
+      },
+      {
+        "name": "Harmony",
+        "lzEid": 30116,
+        "chainId": 1666600000,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x49cdb957e43f1b25b6d723cde7347d8789363d77a9002526e43a3ccf3e3f36f8",
+        "deployBlock": 87269476
+      },
+      {
+        "name": "Kava",
+        "lzEid": 30177,
+        "chainId": 2222,
+        "myOftSolomon": "0x94b354665e70fD2A74594595197CEb4527c36d7C",
+        "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+        "deployTx": "0x735cc3689be5729326f689c17f12874b685b7c9aa9020ab78d016171b2b405cb",
+        "deployBlock": 20145046
+      }
+    ],
+    "nonEvm": {
+      "sui": {
+        "lzEid": 30378,
+        "solomonOft": "NOT_DEPLOYED_SNAPSHOT",
+        "endpointV2": "0x31beaef889b08b9c3b37d19280fc1f8b75bae5b2de2410fc3120f403e9a36dac",
+        "executor": "0xde7fe1a6648d587fcc991f124f3aa5b6389340610804108094d5c5fbf61d1989",
+        "sendUln302": "0x3ce7457bed48ad23ee5d611dd3172ae4fbd0a22ea0e846782a7af224d905dbb0",
+        "receiveUln302": "0x3ce7457bed48ad23ee5d611dd3172ae4fbd0a22ea0e846782a7af224d905dbb0"
+      },
+      "aptos": {
+        "lzEid": 30108,
+        "nativeChainId": 1,
+        "solomonOft": "NOT_DEPLOYED_SNAPSHOT",
+        "endpointV2": "0xe60045e20fc2c99e869c1c34a65b9291c020cd12a0d37a00a53ac1348af4f43c",
+        "executor": "0x15a5bbf1eb7998a22c9f23810d424abe40bd59ddd8e6ab7e59529853ebed41c4",
+        "sendUln302": "0xc33752e0220faf79e45385dd73fb28d681dcd9f1569a1480725507c1f3c3aba9",
+        "receiveUln302": "0xc33752e0220faf79e45385dd73fb28d681dcd9f1569a1480725507c1f3c3aba9"
+      },
+      "tron": {
+        "lzEid": 30420,
+        "nativeChainId": 728126428,
+        "solomonOft": "NOT_DEPLOYED_SNAPSHOT",
+        "endpointV2": "0x0Af59750D5dB5460E5d89E268C474d5F7407c061",
+        "executor": "0x67DE40af19C0C0a6D0278d96911889fAF4EBc1Bc",
+        "sendUln302": "0xE369D146219380B24Bb5D9B9E08a5b9936F9E719",
+        "receiveUln302": "0x612215D4dB0475a76dCAa36C7f9afD748c42ed2D"
+      },
+      "stellar": {
+        "lzEid": 30600,
+        "classicAsset": "SOLOMON:GB5XTVC5AX25NJYM3M7Z5OEDVWKGIN4GFCVZMNRRK2V63KKVKDVQUG33",
+        "issuerG": "GB5XTVC5AX25NJYM3M7Z5OEDVWKGIN4GFCVZMNRRK2V63KKVKDVQUG33",
+        "endpointV2": "CAA4ZB7DNJ7KIZDEVDQRAZOQHYOV6U42LGBW375ZG7HIMUILA5FPXKQH",
+        "executor": "CBQEZUKG6R6PLEHHUNJI2YITWFUXTWVMLATLA5Z57UR3XMQLCFYIXLFY",
+        "sendUln302": "CA5R2JQYRJXFLWHE3XLLIO32HMF4MIDYY2NLWMGYYQDWKU6BTXL7URJI",
+        "receiveUln302": "CA5R2JQYRJXFLWHE3XLLIO32HMF4MIDYY2NLWMGYYQDWKU6BTXL7URJI",
+        "sacContractId": "CC4IHSCNQBWTXXMXPALMHSG222JS3ABTPXHOC5VF2TFRIMF7XYO6GPQ5",
+        "sacManagerContractId": "CBDFZSIUAWR7KO3G77RQWH3XQQQCJGSOIXYU37PXOZ5RRH2YDRYYCJKY",
+        "oftContractId": "CCTDMZHKMZA4DDFU3PDD5NW3Z4S6GXBQ2BUCD6DQXHK3CSWINJ7TSSRX"
+      }
+    },
+    "uiHints": {
+      "walletConnect": "Use chainId for EVM wallets; Solana uses custom RPC with Phantom/Solflare.",
+      "layerZeroScan": "https://layerzeroscan.com/",
+      "lzMetadataApi": "https://metadata.layerzero-api.com/v1/metadata",
+      "lzDeployedContractsDoc": "https://docs.layerzero.network/v2/deployments/deployed-contracts",
+      "operationalNoteFromSnapshot": "UI lists only EVM chains with a logged Sol-to-EVM canary (Apr 2026). Solana-Stellar and other non-EVM routes are excluded. EVM-to-Solana min canaries were not logged to the same runbook; treat reverse direction as higher risk."
+    }
+  }
+}

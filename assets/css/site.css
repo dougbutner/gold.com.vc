@@ -446,6 +446,109 @@ body.home-page .home-investor-link a:hover {
   color: #ffffff;
 }
 
+/* Home: deployment + LayerZero / TradingView (injected below nav) */
+body.home-page .home-front-wrap {
+  align-self: center;
+  width: min(960px, calc(100% - 32px));
+  margin: 6px auto 0;
+  z-index: 12;
+  pointer-events: auto;
+}
+
+body.home-page .home-deploy-banner {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 240, 200, 0.95);
+  background: rgba(10, 6, 0, 0.82);
+  border: 1px solid rgba(255, 215, 0, 0.28);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 0 0 8px;
+}
+
+body.home-page .home-deploy-banner strong {
+  color: var(--gold);
+}
+
+body.home-page .home-markets-block {
+  border: 1px solid rgba(255, 215, 0, 0.22);
+  border-radius: 12px;
+  background: rgba(10, 6, 0, 0.78);
+  overflow: hidden;
+}
+
+body.home-page .home-markets-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-soft);
+  background: rgba(255, 215, 0, 0.06);
+}
+
+body.home-page .home-markets-summary::-webkit-details-marker {
+  display: none;
+}
+
+body.home-page .home-markets-body {
+  padding: 12px 14px 16px;
+  max-height: min(70vh, 640px);
+  overflow: auto;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+body.home-page .home-markets-lead {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+
+body.home-page .home-markets-lead a {
+  color: var(--gold-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+body.home-page .home-markets-table-wrap {
+  margin-bottom: 12px;
+}
+
+body.home-page .home-markets-table {
+  min-width: 0;
+  font-size: 12px;
+}
+
+body.home-page .home-markets-table th,
+body.home-page .home-markets-table td {
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+body.home-page .home-tv-note {
+  font-size: 12px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+body.home-page .home-tv-chart {
+  height: 420px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+body.home-page .home-tv-attribution {
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(248, 237, 212, 0.55);
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .nav {
     padding: 16px 20px;
@@ -494,3 +597,93 @@ body.home-page .home-investor-link a:hover {
     max-width: 100%;
   }
 }
+
+.concepts-section {
+  margin-top: 48px;
+}
+
+.concepts-panel {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 0;
+  overflow: hidden;
+}
+
+.concepts-panel > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: #fff4c9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 215, 0, 0.06);
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.concepts-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.concepts-panel > summary::after {
+  content: "+";
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+  color: var(--gold);
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.concepts-panel[open] > summary {
+  border-bottom-color: var(--line);
+}
+
+.concepts-panel[open] > summary::after {
+  content: "−";
+  transform: rotate(0deg);
+}
+
+.concepts-panel > summary:hover {
+  background: rgba(255, 215, 0, 0.12);
+}
+
+.concepts-body {
+  padding: 18px 22px 22px;
+  color: var(--text-soft);
+}
+
+.concepts-body > :first-child {
+  margin-top: 0;
+}
+
+.concepts-body h3 {
+  font-family: "Syne", sans-serif;
+  color: #fff4c9;
+  font-size: clamp(17px, 2.2vw, 21px);
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.concepts-body h3:first-of-type {
+  margin-top: 14px;
+}
+
+.concepts-body p + p {
+  margin-top: 8px;
+}
+
+.concepts-body ul,
+.concepts-body ol {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.concepts-body li + li {
+  margin-top: 4px;
+}
+

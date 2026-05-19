@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-<title>SOLOMON — Gold That Adds Volatility | gold.com.vc</title>
+{{HEAD_META}}
+<title>{{TITLE}}</title>
 <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -47,67 +47,8 @@ canvas{display:block}
 <div id="app"></div>
 
 <div class="overlay">
-  <nav class="nav" data-mobile-nav>
-    <a href="index.html" class="nav-logo">
-      <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" alt="SOLOMON" crossorigin="anonymous">
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-    <div class="nav-links">
-      <a href="info.html">Types of Gold</a>
-      <a href="types-of-tokens.html">Types of Tokens</a>
-      <a href="generating-wealth.html">Generating Wealth</a>
-      <a href="legal.html">Legal Disclaimers</a>
-      <a href="new-earth.html" class="nav-cta">Solomon's New Earth</a>
-    </div>
-  </nav>
-<div class="home-front-wrap">
-  <p class="home-deploy-banner"><strong>Deployment status:</strong> The token may be available in some venues, but the system is <strong>not fully deployed</strong>—routes, pools, and interfaces can change. Nothing on this page is an offer or solicitation.</p>
-  <details class="home-markets-block">
-    <summary class="home-markets-summary">LayerZero routes, DEX venues &amp; reference chart</summary>
-    <div class="home-markets-body">
-      <p class="home-markets-lead">SOLOMON-family liquidity is centered on <strong>Alcor</strong> on <strong>XPR Network</strong> (Antelope). Cross-chain expansion uses <strong>LayerZero V2</strong> with <strong>Solana mainnet</strong> as the OApp source; LayerZero documents Solana mainnet endpoint id <strong>30168</strong> (<a href="https://docs.layerzero.network/v2/deployments/chains/solana" target="_blank" rel="noopener">official Solana deployment page</a>). EVM destinations follow LayerZero&rsquo;s <a href="https://docs.layerzero.network/v2/deployments/deployed-contracts" target="_blank" rel="noopener">deployed endpoints</a> registry—see <a href="new-earth.html">Solomon&rsquo;s New Earth</a> for the project&rsquo;s chain list and gilding context.</p>
-      <div class="content-table-wrap home-markets-table-wrap">
-        <table class="content-table home-markets-table">
-          <thead>
-            <tr>
-              <th>Venue type</th>
-              <th>Stack / bridge</th>
-              <th>Role for SOLOMON pools</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alcor Exchange (XPR)</td>
-              <td>XPR Network (Antelope); no LayerZero endpoint on-chain here—assets reach XPR via bridges you trust.</td>
-              <td>Primary documented DEX for SOLOMON-style pools, swaps, and analytics on XPR.</td>
-            </tr>
-            <tr>
-              <td>EVM AMMs (e.g. Uniswap-style)</td>
-              <td>LayerZero V2 messaging from Solana (<abbr title="Endpoint ID">EID</abbr> 30168 per LayerZero docs) to each EVM chain in the registry.</td>
-              <td>Pools can appear as token deployment extends; always verify live pair addresses and liquidity on the specific DEX explorer.</td>
-            </tr>
-            <tr>
-              <td>Solana AMMs</td>
-              <td>Native Solana programs; LayerZero Solana endpoint for cross-chain sends/receives.</td>
-              <td>Possible venue when Solana-side liquidity is listed; confirm on-chain before trading.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="home-tv-note"><strong>Chart:</strong> SOLOMON may not have a TradingView symbol. Below is TradingView&rsquo;s free <em>Advanced Chart</em> widget (<a href="https://www.tradingview.com/widget-docs/widgets/charts/advanced-chart/" target="_blank" rel="noopener">widget docs</a>) on <strong>PAXG/USDT</strong> as a liquid proxy for tokenized gold backing—not a live SOLOMON pool chart. Use the symbol search inside the widget to switch instruments.</p>
-      <div class="tradingview-widget-container home-tv-chart">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>{"autosize":true,"symbol":"BINANCE:PAXGUSDT","interval":"240","timezone":"Etc/UTC","theme":"dark","style":"1","locale":"en","backgroundColor":"rgba(10, 6, 0, 1)","hide_top_toolbar":false,"hide_legend":false,"allow_symbol_change":true,"save_image":false,"calendar":false,"hide_volume":false,"support_host":"https://www.tradingview.com","width":"100%","height":"100%","enabled_features":[],"disabled_features":[],"referral_id":"","isTransparent":false}</script>
-      </div>
-      <p class="home-tv-attribution">Charts by <a href="https://www.tradingview.com/" target="_blank" rel="noopener">TradingView</a>, used under their widget terms.</p>
-    </div>
-  </details>
-</div>
-
+{{NAV}}
+{{HOME_FRONT_SECTION}}
 </div>
 
 <div class="home-investor-link">
@@ -116,13 +57,10 @@ canvas{display:block}
 
 <!-- Stats Bar -->
 <div class="stats">
-  <div class="stat"><div class="stat-num">50%</div><div class="stat-lbl">REVENUE TO PARTNERS</div></div>
-  <div class="stat"><div class="stat-num">11.4g</div><div class="stat-lbl">PHYSICAL GOLD PER TOKEN</div></div>
-  <div class="stat"><div class="stat-num">24-40%+</div><div class="stat-lbl">EST. PARTNER YIELD</div></div>
-  <div class="stat"><div class="stat-num">2%</div><div class="stat-lbl">TRANSFER TAX → YOUR PROFIT</div></div>
+{{HOME_STATS}}
 </div>
 
-<div class="info">drag to splash liquid gold • click to spawn bars • the fiat bubble is coming</div>
+<div class="info">{{HOME_HINT}}</div>
 
 <script src="assets/js/nav.js" defer></script>
 <script src="assets/js/gate.js" defer></script>
@@ -204,23 +142,23 @@ function drawBackground(){
   bgCtx.font = "800 " + titleSize + "px 'Syne', sans-serif";
   bgCtx.shadowColor = "#ffd700";
   bgCtx.shadowBlur = 40;
-  bgCtx.fillText("SOLOMON", w*0.5, h*0.57);
+  bgCtx.fillText("{{HERO_TITLE}}", w*0.5, h*0.57);
 
   // Supporting text - smaller and cleaner
   var tagSize = Math.round(w * 0.024);
   bgCtx.font = "700 " + tagSize + "px 'DM Sans', sans-serif";
   bgCtx.globalAlpha = 0.95;
   bgCtx.fillStyle = "#fff";
-  bgCtx.fillText("GOLD IS KING.", w*0.5, h*0.57 + titleSize * 0.78);
+  bgCtx.fillText("{{HERO_LINE_1}}", w*0.5, h*0.57 + titleSize * 0.78);
 
   bgCtx.globalAlpha = 0.78;
-  bgCtx.fillText("ESPECIALLY DIGITAL GOLD.", w*0.5, h*0.57 + titleSize * 1.16);
+  bgCtx.fillText("{{HERO_LINE_2}}", w*0.5, h*0.57 + titleSize * 1.16);
 
   bgCtx.globalAlpha = 1;
   var subSize = Math.round(w * 0.0175);
   bgCtx.font = "600 " + subSize + "px 'DM Sans', sans-serif";
   bgCtx.fillStyle = "#ffd700";
-  bgCtx.fillText("WILL YOU BE READY WHEN THE FIAT BUBBLE BURSTS?", w*0.5, h*0.57 + titleSize * 1.72);
+  bgCtx.fillText("{{HERO_SUBTITLE}}", w*0.5, h*0.57 + titleSize * 1.72);
 
   bgTexture.needsUpdate = true;
 }

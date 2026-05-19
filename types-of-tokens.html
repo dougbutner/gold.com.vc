@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How SOLOMON classifies tokens by how their supply is deployed: Distributed, Pure Liquid, Pure Liquid Gold, and Layered Liquid.">
+  <title>Types of Tokens | gold.com.vc</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="site-page">
+  <nav class="nav" data-mobile-nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" alt="SOLOMON" crossorigin="anonymous">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="info.html">Types of Gold</a>
+      <a href="types-of-tokens.html">Types of Tokens</a>
+      <a href="generating-wealth.html">Generating Wealth</a>
+      <a href="legal.html">Legal Disclaimers</a>
+      <a href="new-earth.html" class="nav-cta">Solomon's New Earth</a>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <span class="page-eyebrow">TYPES OF TOKENS</span>
+    <h1 id="types-of-tokens">Types of Tokens</h1>
+    <p>Most tokens are described by <em>what they represent</em> — a coin, a stablecoin, a
+    governance share. SOLOMON tokens are easier to understand by <em>how their
+    supply is deployed</em>. The labels below are the vocabulary we use across the
+    ecosystem.</p>
+    <h2 id="section-a-unique-token-types">Section A — Unique token types</h2>
+    <h3 id="distributed-tokens">Distributed Tokens</h3>
+    <p>A &quot;distributed token&quot; is the familiar baseline: supply is minted and then
+    spread across holder wallets, exchanges, treasuries, and rewards programs.
+    Trades happen wherever buyers and sellers meet, and the token&#39;s market
+    liquidity depends on whoever happens to provide it.</p>
+    <p>SOLOMON-family distributed tokens add one twist: a small transfer fee that
+    is captured each time the token moves. Those fees feed liquidity, rewards,
+    or buybacks instead of being lost to spread. This is the foundation that
+    makes the more specialized token types below worth building on.</p>
+    <h3 id="pure-liquid">Pure Liquid</h3>
+    <p>A <strong>Pure Liquid token</strong> does not start its life in wallets. Instead, <strong>100%
+    of supply is placed into ranged liquidity positions in secure pools on day
+    one</strong>, with the backing asset committed entirely above the starting price.
+    Until someone buys, the token literally only exists as inventory inside the
+    pool.</p>
+    <p>That design makes three properties true at launch:</p>
+    <ul>
+    <li><strong>Backed by liquidity rather than promises.</strong> The backing asset is deposited
+    in the same pools as the token, in the visible range where trades happen.</li>
+    <li><strong>No insider supply overhang.</strong> There is no founder bag waiting to dump,
+    because no wallets hold supply yet.</li>
+    <li><strong>Honest price discovery.</strong> Every unit acquired requires buying through
+    the public pool at a real, observable price.</li>
+    </ul>
+    <p>Risk and disclaimer detail live in the <a href="legal.html">Legal Disclaimers</a>; the
+    description above is a design summary, not a guarantee of returns.</p>
+    <h3 id="pure-liquid-gold">Pure Liquid Gold</h3>
+    <p>A <strong>Pure Liquid Gold token</strong> is a Pure Liquid token whose backing asset is a
+    <strong>redeemable-for-physical-gold token</strong> — PAXG, XAUT, or another LBMA-grade
+    issuer&#39;s product. The physical gold continues to sit in the audited custody
+    of that issuer; SOLOMON&#39;s job is to put the on-chain liquidity around it.</p>
+    <p>The combination is intentional:</p>
+    <ul>
+    <li>The issuer (Paxos, Tether, etc.) handles vaulting, audits, and physical
+    redemption.</li>
+    <li>The Pure Liquid design adds <strong>deep, ranged liquidity</strong> in the pool, so
+    buyers and sellers always have an on-chain venue.</li>
+    <li>The transfer fee feeds back into more liquidity, deepening the same pool
+    that backs the token.</li>
+    </ul>
+    <p>Redemption to physical metal flows through the underlying issuer&#39;s
+    processes, not through SOLOMON contracts. See the
+    <a href="legal.html#redemption-disclaimer">Redemption Disclaimer</a> for the formal
+    terms.</p>
+    <h3 id="layered-liquid">Layered Liquid</h3>
+    <p>A <strong>Layered Liquid token</strong> is a token whose backing is itself a Pure Liquid
+    token. Picture an inner Pure Liquid (for example, Pure Liquid Gold) that is
+    already fully deployed into a pool. A Layered Liquid token wraps that inner
+    token and is itself launched Pure Liquid against it.</p>
+    <p>The outer layer can carry different economics (different fee schedules,
+    distribution programs, or chain coverage) while inheriting the inner
+    layer&#39;s liquidity backbone. In short: it is <strong>Pure Liquid stacked on Pure
+    Liquid</strong>.</p>
+    <h3 id="liquid-for-a-pure-liquid">Liquid for a Pure Liquid</h3>
+    <p>&quot;Liquid for a Pure Liquid&quot; is the short name for the <strong>secondary liquidity
+    layer</strong> around an existing Pure Liquid token. Where the inner Pure Liquid
+    provides the base inventory range, this outer layer extends depth on either
+    side of that range, or onto additional chains, so users see a smoother book
+    end-to-end. Layered Liquid is the structured product; &quot;Liquid for a Pure
+    Liquid&quot; is the role the outer layer plays.</p>
+    <section class="concepts-section" aria-label="Concepts glossary">
+      <details class="concepts-panel">
+        <summary>Concepts — click to expand</summary>
+        <div class="concepts-body">
+          <p>The same vocabulary is used across SOLOMON pages. Open this panel any time
+          you want a quick refresher.</p>
+          <h3 id="swap-pools">Swap pools</h3>
+          <p>Smart contracts that hold paired assets so users can trade between them at an
+          algorithmic price. Anyone can deposit assets (called &quot;liquidity&quot;) and trades
+          route through the pool.</p>
+          <h3 id="fees-in-swap-pools">Fees in swap pools</h3>
+          <p>A small percentage of each trade stays in the pool and is split among the
+          addresses that provided the liquidity, paying them for taking on the inventory
+          risk of holding both assets.</p>
+          <h3 id="token-transfer-fees">Token transfer fees</h3>
+          <p>A small percentage charged each time a token moves between wallets. Most
+          SOLOMON-family tokens reinvest these fees into deeper liquidity and rewards.
+          Exceptions exist in our custom designs where movement between dedicated
+          system contracts is exempt so internal routing is not double-taxed.</p>
+          <h3 id="flex-reflections">Flex (reflections)</h3>
+          <p>A reward style where simply holding a token automatically grants you a share
+          of fees or new emissions based on your balance — the token &quot;flexes&quot; returns
+          to holders without requiring active staking.</p>
+          <h3 id="liquidity-in-defi">Liquidity (in DeFi)</h3>
+          <p>The depth of inventory available for trades at a given price. Deeper
+          liquidity means smaller slippage on a given trade size and a tighter market
+          overall.</p>
+          <h3 id="liquidity-positions">Liquidity positions</h3>
+          <p>A specific price range between two assets in a pool where you have committed
+          inventory to trade. Outside the range, your position sits fully in one asset;
+          inside, you earn fees as trades pass through.</p>
+          <h3 id="supply">Supply</h3>
+          <p>The total number of tokens minted (or in circulation). For our designs, the
+          way supply is <em>deployed</em> — into ranged liquidity rather than dormant wallets —
+          matters as much as the headline number.</p>
+          <h3 id="pure-liquid">Pure Liquid</h3>
+          <p>A token that places 100% of its supply into ranged liquidity positions in
+          secure pools from day one, with the entire backing asset committed above the
+          starting price. The token essentially only exists as buyable inventory in the
+          pool.</p>
+          <h3 id="pure-liquid-gold">Pure Liquid Gold</h3>
+          <p>A Pure Liquid token whose backing is a redeemable-for-physical-gold token
+          (PAXG, XAUT, or similar). The underlying remains in the audited custody of
+          the source issuer, while SOLOMON adds the on-chain liquidity surface.</p>
+          <h3 id="layered-liquid">Layered Liquid</h3>
+          <p>A token that is itself Pure Liquid against another Pure Liquid token — an
+          outer layer that uses an inner Pure Liquid as its backing asset and inherits
+          that inner pool&#39;s liquidity guarantees while adding its own routing,
+          distribution, and economics.</p>
+          <h3 id="buybacks-with-fees">Buybacks with fees</h3>
+          <p>Using fees collected by the system to buy the project&#39;s own token back from
+          the market, supporting the price and concentrating supply held by the
+          protocol or its partners.</p>
+          <h3 id="lp-with-fees">LP with fees</h3>
+          <p>Using fees to add the project&#39;s token (and a matching asset) back into
+          liquidity pools, deepening the very markets that earn the fees in the first
+          place.</p>
+          <h3 id="inflated-rewards-tokens">Inflated rewards tokens</h3>
+          <p>Tokens earmarked for ecosystem rewards that are emitted (inflated) into the
+          supply over time as incentives. They begin without backing and are
+          progressively backed as fees from the wider ecosystem flow in.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="info.html">Types of Gold</a> ·
+      <a href="generating-wealth.html">Generating Wealth</a> ·
+      <a href="/info" data-gated-target="/info">Investor Info</a> ·
+      <a href="legal.html">Legal Disclaimers</a> ·
+      <a href="new-earth.html">Solomon's New Earth</a>
+    </p>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/gate.js" defer></script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare physical gold, gold ETFs, and on-chain gold (PAXG, XAUT). How SOLOMON fits: bridging, liquidity, and tradeoffs for serious capital.">
   <title>SOLOMON Info | gold.com.vc</title>
   <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,28 +22,50 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="info.html">Types of Gold</a>
-      <a href="/contract" data-gated-target="/contract">Contract</a>
+      <a href="types-of-tokens.html">Types of Tokens</a>
+      <a href="generating-wealth.html">Generating Wealth</a>
       <a href="legal.html">Legal Disclaimers</a>
-      <a href="new-earth.html" class="nav-cta">Solomon&apos;s New Earth</a>
+      <a href="new-earth.html" class="nav-cta">Solomon's New Earth</a>
     </div>
   </nav>
 
   <main class="page-main">
     <span class="page-eyebrow">INFO PAGE</span>
-    <h1>What gold you have matters</h1>
-
-    <h2>How we got to Solomon</h2>
-    <p>
-      Gold has always been the anchor when trust in fiat weakens, but most buyers still have to pick from tradeoffs:
-      custody risk, low liquidity, premium drag, or weak on-chain utility. Solomon is built from that gap.
-    </p>
-    <p>
-      The goal is to keep the core strength of physical backing while adding modern liquidity rails and transparent
-      on-chain mechanics designed for serious capital.
-    </p>
-
-    <h2>Table of Gold benefits</h2>
-    <p>Show Benefits, Drawbacks, with list items in each cell.</p>
+    <h1 id="what-gold-you-have-matters">What gold you have matters</h1>
+    <h2 id="how-we-got-to-solomon">How we got to Solomon</h2>
+    <p>Gold has always been the anchor when trust in fiat weakens, but most buyers
+    still have to pick from tradeoffs: custody risk, low liquidity, premium drag,
+    or weak on-chain utility. Solomon is built from that gap.</p>
+    <p>The goal is to keep the core strength of physical backing while earning from
+    market making — in many cases providing the first usable liquidity rails for
+    gold on a given chain. Precise on-chain mechanics designed for serious
+    capital.</p>
+    <h2 id="the-four-ways-people-hold-gold-today">The four ways people hold gold today</h2>
+    <p>Most allocators end up choosing among four formats. The plain-English
+    definitions below feed directly into the benefits matrix that follows.</p>
+    <ul>
+    <li><strong>Physical</strong> — bullion, coins, or bars in self-custody or a private vault.
+    You own the metal directly; trust falls on storage and assay rather than on
+    a platform.</li>
+    <li><strong>ETF</strong> — shares of a listed fund (for example
+    <a href="https://www.spdrgoldshares.com/">SPDR Gold Shares (GLD)</a> or
+    <a href="https://www.ishares.com/us/products/239561/ishares-gold-trust-fund">iShares Gold Trust (IAU)</a>)
+    whose net asset value is backed by allocated gold held with a custodian.
+    Liquid in brokerage accounts, but redemption for physical metal is
+    generally only available to authorized participants.</li>
+    <li><strong>Tokenized (on-chain)</strong> — gold-backed tokens such as
+    <a href="https://www.paxos.com/pax-gold">PAX Gold (PAXG)</a> and
+    <a href="https://gold.tether.to/faq">Tether Gold (XAUT)</a>, each commonly
+    structured as about one fine troy ounce of LBMA Good Delivery gold held in
+    custody. Transferable on a blockchain, programmable, and usable in DeFi.</li>
+    <li><strong>SOLOMON</strong> — a gold-linked token that holds tokenized gold (PAXG / XAUT
+    style) as backing and deploys it into concentrated, cross-chain liquidity
+    pools, earning from the transfer fee and from routing flow.</li>
+    </ul>
+    <h2 id="table-of-gold-benefits">Table of Gold benefits</h2>
+    <p>Physical bars, listed ETFs, and tokenized gold each solve a different
+    problem. Use the matrix below to compare benefits and tradeoffs before
+    layering strategies like SOLOMON on top.</p>
     <div class="content-table-wrap">
       <table class="content-table">
         <thead>
@@ -81,26 +104,26 @@
             </td>
             <td>
               <ul>
-                <li>No direct redemption for most holders.</li>
-                <li>Exposure depends on fund structure and intermediaries.</li>
-                <li>Limited utility in decentralized markets.</li>
+                <li>Primary creation and redemption is typically for authorized participants; retail holders usually get exposure by trading shares, not by calling metal from the trust.</li>
+                <li>Where physical delivery exists, minimums and logistics often push it out of reach for everyday account sizes.</li>
+                <li>Exposure depends on fund structure, custodians, and intermediaries; limited utility in decentralized markets.</li>
               </ul>
             </td>
           </tr>
           <tr>
-            <td>Digital</td>
+            <td>Tokenized (on-chain)</td>
             <td>
               <ul>
                 <li>Fast global transfer and programmable settlement.</li>
                 <li>Works with DeFi tools and treasury automation.</li>
-                <li>Transparent on-chain movement and accounting.</li>
+                <li>Major gold tokens are designed for transparent reserve reporting and on-chain movement (subject to issuer disclosures).</li>
               </ul>
             </td>
             <td>
               <ul>
-                <li>Bridge and smart contract risk vary by design.</li>
-                <li>Liquidity can fragment between chains.</li>
-                <li>Custody decisions still require technical controls.</li>
+                <li>Bridge, oracle, and smart-contract risk vary materially by design.</li>
+                <li>Liquidity and depth differ by chain and pair; fragmentation is common.</li>
+                <li>Custody and key management still require strong operational controls.</li>
               </ul>
             </td>
           </tr>
@@ -108,15 +131,15 @@
             <td>SOLOMON</td>
             <td>
               <ul>
-                <li>Provides cheapest route for traders to buy gold.</li>
-                <li>Can hedge inflation and supply-chain volatility.</li>
-                <li>Provides a more liquid and accessible way to buy gold.</li>
+                <li>Designed to earn from liquidity provision and routing across gold-backed pairs.</li>
+                <li>Can be complementary when real rates, inflation surprises, or commodity stress reprice gold.</li>
+                <li>Aims to improve access and depth for gold tokens on networks where books were previously thin.</li>
               </ul>
             </td>
             <td>
               <ul>
-                <li>Pricing can follow broader commodity shocks.</li>
-                <li></li>
+                <li>2% transfer fee on every trade limits use outside market making.</li>
+                <li>Requires secure underlying gold tokens.</li>
                 <li>Not all products offer direct metal ownership.</li>
               </ul>
             </td>
@@ -125,62 +148,151 @@
       </table>
     </div>
 
-    <h2>Stock your Chest</h2>
-    <p>
-      This section introduces each type of investor&apos;s unique concerns, and something they may not know about that is
-      an expense or difficulty when adding gold exposure at scale.
-    </p>
+    <h2 id="digitally-conductive">Digitally Conductive</h2>
+    <p>Physical, ETF, and tokenized are <em>custody</em> formats — they each describe
+    <em>where</em> the gold lives. SOLOMON adds a different axis: <strong>digital
+    conductivity</strong>. A gold token is digitally conductive when its on-chain
+    positioning actively routes value between pools, chains, and pairs, instead
+    of sitting idle in a wallet.</p>
+    <p>In practical terms, conductivity means three things working together:</p>
+    <ul>
+    <li><strong>Concentrated liquidity</strong> in ranged positions on gold-to-gold and
+    gold-to-crypto pools, so swaps clear at tight prices.</li>
+    <li><strong>Cross-chain routes</strong> that let the same gold-linked unit move between
+    Solana and 28+ EVM destinations (see <a href="new-earth.html">Solomon&#39;s New Earth</a>
+    for the current chain set).</li>
+    <li><strong>Best-priced presence</strong> in those pools. When SOLOMON-deployed liquidity
+    is the cheapest path between gold and another asset, every trade that
+    takes that path returns swap fees to the system rather than to a
+    third-party market maker.</li>
+    </ul>
+    <p>The benefit to holders is not a separate yield product — it is the same
+    network earning more revenue because it is more <em>useful</em> to the market. The
+    2% transfer fee is the visible surface; conductivity is what makes that
+    surface valuable across many chains at once.</p>
+    <h2 id="stock-your-chest">Stock your Chest</h2>
+    <p>This section introduces each type of investor&#39;s unique concerns, and
+    something they may not know about that is an expense or difficulty when
+    adding gold exposure at scale.</p>
     <blockquote>
-      “If you don&apos;t own gold, you know neither history nor economics.” — Ray Dalio.
-      <br>
-      Reference: <a href="https://www.youtube.com/watch?v=u-vMNzHgSHI" target="_blank" rel="noopener">Ray Dalio on portfolio gold allocation (5-15%)</a>
+    <p>&quot;If you don&#39;t own gold, you know neither history nor economics.&quot; — Ray
+    Dalio.</p>
+    <p>Context: interviews and commentary often cite a strategic band of roughly
+    <strong>5–15%</strong> of a portfolio in gold for diversification (sometimes higher in
+    stressed macro regimes). See
+    <a href="https://www.youtube.com/watch?v=u-vMNzHgSHI">Dalio on gold allocation (video)</a>
+    and
+    <a href="https://www.investopedia.com/how-much-of-your-portfolio-ray-dalio-says-you-should-have-in-gold-11825571">Investopedia summary</a>.</p>
     </blockquote>
-
-    <h3>Understanding Gold for Institutions</h3>
-    <p>
-      Institutions care about audited reserves, clear compliance posture, and dependable liquidity windows. Hidden
-      costs usually appear in custody agreements, reconciliation overhead, and spread costs during stressed markets.
-    </p>
-
-    <h3>Understanding gold buys for VCs</h3>
-    <p>
-      Venture investors often seek non-correlated ballast but underestimate execution friction across chains, tax
-      treatment complexity, and the staffing needed to monitor treasury policy in real time.
-    </p>
-
-    <h3>Understanding Gold for Wealthy Individuals</h3>
-    <p>
-      High-net-worth buyers usually prioritize capital preservation and inheritance clarity. Expenses they may miss
-      include cross-border transport constraints, insurance terms, and liquidation timing when immediate cash is needed.
-    </p>
-
-    <h2>The new Gold Standard: Solomon</h2>
+    <h3 id="understanding-gold-for-institutions">Understanding Gold for Institutions</h3>
+    <p>Institutions care about audited reserves, clear compliance posture, and
+    dependable liquidity windows. Hidden costs usually appear in custody
+    agreements, reconciliation overhead, and spread costs during stressed
+    markets.</p>
+    <h3 id="understanding-gold-buys-for-vcs">Understanding gold buys for VCs</h3>
+    <p>Venture investors often seek non-correlated ballast but underestimate
+    execution friction across chains, tax treatment complexity, and the staffing
+    needed to monitor treasury policy in real time.</p>
+    <h3 id="understanding-gold-for-wealthy-individuals">Understanding Gold for Wealthy Individuals</h3>
+    <p>High-net-worth buyers usually prioritize capital preservation and
+    inheritance clarity. Expenses they may miss include cross-border transport
+    constraints, insurance terms, and liquidation timing when immediate cash is
+    needed.</p>
+    <h2 id="the-new-gold-standard-solomon">The new Gold Standard: Solomon</h2>
     <p>Designed for Venture Capital and High Net Worth.</p>
-    <p>
-      SOLOMON is a gold-backed token (1 SOLOMON = 11.4 grams of physical gold) that bridges audited gold assets like
-      PAXG and XAUT across 20+ blockchains using LayerZero and locked liquidity pools.
-    </p>
-    <p>
-      It earns revenue through a built-in 2% transfer tax on every trade. Arbitrage bots constantly interact with the
-      locked pools to stabilize gold prices and capture volatility, generating steady volume from gold-to-gold,
-      gold-to-crypto, and monopoly pricing on chains that previously lacked liquid gold options.
-    </p>
-    <p>
-      Partners who invest a minimum of $50k and sign a 3-year private agreement split 50% of the tax revenue
-      proportionally to their shares (paid monthly to their wallet). The other 50% is reinvested into buybacks and
-      market-making. All tokens and backing assets are permanently locked in CLMM pools, making the system rug-proof
-      while remaining fully redeemable for gold. This delivers passive income (estimated 24-40%+ APY from the revenue
-      share alone, based on the team&apos;s prior EASY token success) plus exposure to gold price appreciation.
-    </p>
+    <p>SOLOMON is structured as a gold-linked token (1 SOLOMON = 11.4 grams of gold
+    exposure via the design described on this site) that bridges audited,
+    institution-grade gold tokens — notably <abbr title="Pax Gold">PAXG</abbr>
+    and <abbr title="Tether Gold">XAUT</abbr>, each typically representing about
+    one fine troy ounce held with LBMA Good Delivery standards — across many
+    blockchains using cross-chain messaging (for example LayerZero) and
+    concentrated liquidity pools.</p>
+    <p>Revenue comes from a built-in 2% transfer fee on trades. Arbitrage and
+    routing interact with the pools to align prices and capture flow, supporting
+    volume across gold-to-gold and gold-to-crypto routes — especially where
+    local gold liquidity was previously shallow.</p>
+    <p>Partners who invest a minimum of $50k and sign a 3-year private agreement
+    split 50% of the tax revenue proportionally to their shares (paid monthly to
+    their wallet). The other 50% is reinvested into buybacks and market-making.
+    Tokens and backing assets are allocated to CLMM-style liquidity positions as described in
+    project materials, with redemption mechanics through automated market makers
+    as set out in the <a href="legal.html">Legal Disclaimers</a>. Materials cite an
+    <strong>estimated</strong> 24–40%+ APY from the revenue share alone (not guaranteed; past
+    performance of other tokens does not predict results). See legal disclosures
+    before relying on any yield figure.</p>
+    <section class="concepts-section" aria-label="Concepts glossary">
+      <details class="concepts-panel">
+        <summary>Concepts — click to expand</summary>
+        <div class="concepts-body">
+          <p>The same vocabulary is used across SOLOMON pages. Open this panel any time
+          you want a quick refresher.</p>
+          <h3 id="swap-pools">Swap pools</h3>
+          <p>Smart contracts that hold paired assets so users can trade between them at an
+          algorithmic price. Anyone can deposit assets (called &quot;liquidity&quot;) and trades
+          route through the pool.</p>
+          <h3 id="fees-in-swap-pools">Fees in swap pools</h3>
+          <p>A small percentage of each trade stays in the pool and is split among the
+          addresses that provided the liquidity, paying them for taking on the inventory
+          risk of holding both assets.</p>
+          <h3 id="token-transfer-fees">Token transfer fees</h3>
+          <p>A small percentage charged each time a token moves between wallets. Most
+          SOLOMON-family tokens reinvest these fees into deeper liquidity and rewards.
+          Exceptions exist in our custom designs where movement between dedicated
+          system contracts is exempt so internal routing is not double-taxed.</p>
+          <h3 id="flex-reflections">Flex (reflections)</h3>
+          <p>A reward style where simply holding a token automatically grants you a share
+          of fees or new emissions based on your balance — the token &quot;flexes&quot; returns
+          to holders without requiring active staking.</p>
+          <h3 id="liquidity-in-defi">Liquidity (in DeFi)</h3>
+          <p>The depth of inventory available for trades at a given price. Deeper
+          liquidity means smaller slippage on a given trade size and a tighter market
+          overall.</p>
+          <h3 id="liquidity-positions">Liquidity positions</h3>
+          <p>A specific price range between two assets in a pool where you have committed
+          inventory to trade. Outside the range, your position sits fully in one asset;
+          inside, you earn fees as trades pass through.</p>
+          <h3 id="supply">Supply</h3>
+          <p>The total number of tokens minted (or in circulation). For our designs, the
+          way supply is <em>deployed</em> — into ranged liquidity rather than dormant wallets —
+          matters as much as the headline number.</p>
+          <h3 id="pure-liquid">Pure Liquid</h3>
+          <p>A token that places 100% of its supply into ranged liquidity positions in
+          secure pools from day one, with the entire backing asset committed above the
+          starting price. The token essentially only exists as buyable inventory in the
+          pool.</p>
+          <h3 id="pure-liquid-gold">Pure Liquid Gold</h3>
+          <p>A Pure Liquid token whose backing is a redeemable-for-physical-gold token
+          (PAXG, XAUT, or similar). The underlying remains in the audited custody of
+          the source issuer, while SOLOMON adds the on-chain liquidity surface.</p>
+          <h3 id="layered-liquid">Layered Liquid</h3>
+          <p>A token that is itself Pure Liquid against another Pure Liquid token — an
+          outer layer that uses an inner Pure Liquid as its backing asset and inherits
+          that inner pool&#39;s liquidity guarantees while adding its own routing,
+          distribution, and economics.</p>
+          <h3 id="buybacks-with-fees">Buybacks with fees</h3>
+          <p>Using fees collected by the system to buy the project&#39;s own token back from
+          the market, supporting the price and concentrating supply held by the
+          protocol or its partners.</p>
+          <h3 id="lp-with-fees">LP with fees</h3>
+          <p>Using fees to add the project&#39;s token (and a matching asset) back into
+          liquidity pools, deepening the very markets that earn the fees in the first
+          place.</p>
+          <h3 id="inflated-rewards-tokens">Inflated rewards tokens</h3>
+          <p>Tokens earmarked for ecosystem rewards that are emitted (inflated) into the
+          supply over time as incentives. They begin without backing and are
+          progressively backed as fees from the wider ecosystem flow in.</p>
+        </div>
+      </details>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>
-      <a href="info.html">Types of Gold</a> ·
+      <a href="types-of-tokens.html">Types of Tokens</a> ·
+      <a href="generating-wealth.html">Generating Wealth</a> ·
       <a href="/info" data-gated-target="/info">Investor Info</a> ·
-      <a href="/contract" data-gated-target="/contract">Contract</a> ·
       <a href="legal.html">Legal Disclaimers</a> ·
-      <a href="new-earth.html">Solomon&apos;s New Earth</a>
+      <a href="new-earth.html">Solomon's New Earth</a>
     </p>
   </footer>
 

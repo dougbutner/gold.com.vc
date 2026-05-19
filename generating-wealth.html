@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The three sources of wealth in the SOLOMON design: the 2% token transfer fee, liquidity provision fees, and appreciation of the underlying gold backing.">
+  <title>Generating Wealth | gold.com.vc</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="site-page">
+  <nav class="nav" data-mobile-nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" alt="SOLOMON" crossorigin="anonymous">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="info.html">Types of Gold</a>
+      <a href="types-of-tokens.html">Types of Tokens</a>
+      <a href="generating-wealth.html">Generating Wealth</a>
+      <a href="legal.html">Legal Disclaimers</a>
+      <a href="new-earth.html" class="nav-cta">Solomon's New Earth</a>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <span class="page-eyebrow">GENERATING WEALTH</span>
+    <h1 id="generating-wealth">Generating Wealth</h1>
+    <p>The SOLOMON design has <strong>three distinct sources of wealth</strong>, and they
+    compound at different speeds. Reading them together makes the rest of the
+    site easier to evaluate.</p>
+    <h2 id="sources-of-wealth">Sources of wealth</h2>
+    <h3 id="1-the-token-2-transfer-fee">1. The token (2% transfer fee)</h3>
+    <p>Every trade of a SOLOMON-family token pays a built-in <strong>2% transfer fee</strong>.
+    Half of that fee is routed to partners proportional to their long-term
+    commitment; the other half is reinvested into buybacks and market-making
+    that deepen the same pools the token trades in.</p>
+    <p>The transfer fee is not a yield product on its own — it is a <em>flow</em> tied to
+    how much the token is being used. More volume on more chains means a larger
+    flow through the fee surface. Estimates of partner APY referenced elsewhere
+    on this site (for example 24–40%+) are scenarios derived from internal
+    modelling and are not guaranteed; see the <a href="legal.html">Legal Disclaimers</a>
+    before relying on any specific number.</p>
+    <h3 id="2-providing-liquidity">2. Providing liquidity</h3>
+    <p>Anyone (including the protocol itself) who provides liquidity to a SOLOMON
+    pool earns the <strong>swap fees</strong> from trades that route through their range.
+    This is independent of the 2% transfer fee — it is the standard
+    concentrated-liquidity market-maker model.</p>
+    <p>Two key tradeoffs to remember:</p>
+    <ul>
+    <li><strong>Range matters.</strong> Your position earns fees only when the pool&#39;s price is
+    inside your range. Outside it, you are fully in one asset and idle.</li>
+    <li><strong>Inventory exposure.</strong> As the price moves, your position rebalances; if
+    the pair moves a lot relative to where you entered, you can underperform
+    simply holding the assets (impermanent loss).</li>
+    </ul>
+    <p>The advantage in SOLOMON pools is that the transfer-fee reinvestment
+    side-loads additional liquidity above and beyond what passive LPs would
+    contribute on their own, which can densify the same range where you earn
+    fees.</p>
+    <h3 id="3-appreciation-of-the-underlying-assets">3. Appreciation of the underlying assets</h3>
+    <p>The third lever is the slowest and the deepest: the <strong>price behavior of the
+    backing asset itself</strong>. For gold-backed tokens, that means the long-term
+    appreciation of physical gold against fiat.</p>
+    <p>Gold has historically served as a long-cycle store of value, but it does
+    not pay a yield, and short-term price moves can be sharp in either
+    direction. The point is not to predict the gold price; it is to recognize
+    that <strong>SOLOMON denominates wealth in something other than the fiat unit it
+    trades against</strong>. When fiat units expand, the same gram of backing is
+    typically priced higher in those units; when they contract, the opposite is
+    true. None of this is investment advice — see the
+    <a href="legal.html#cryptocurrency-market-volatility">Cryptocurrency Market Volatility</a>
+    section for the formal risk framing.</p>
+    <h2 id="putting-the-three-together">Putting the three together</h2>
+    <p>The three sources are intentionally additive:</p>
+    <ul>
+    <li><strong>The transfer fee</strong> captures <em>flow</em>.</li>
+    <li><strong>Liquidity provision</strong> captures <em>spread</em>.</li>
+    <li><strong>Underlying appreciation</strong> captures <em>long-cycle store of value</em>.</li>
+    </ul>
+    <p>A position that participates in all three sees the smallest source compound
+    into the largest over a long enough horizon. None of them are guaranteed,
+    and all of them are subject to the disclosures on the
+    <a href="legal.html">Legal Disclaimers</a> page.</p>
+    <section class="concepts-section" aria-label="Concepts glossary">
+      <details class="concepts-panel">
+        <summary>Concepts — click to expand</summary>
+        <div class="concepts-body">
+          <p>The same vocabulary is used across SOLOMON pages. Open this panel any time
+          you want a quick refresher.</p>
+          <h3 id="swap-pools">Swap pools</h3>
+          <p>Smart contracts that hold paired assets so users can trade between them at an
+          algorithmic price. Anyone can deposit assets (called &quot;liquidity&quot;) and trades
+          route through the pool.</p>
+          <h3 id="fees-in-swap-pools">Fees in swap pools</h3>
+          <p>A small percentage of each trade stays in the pool and is split among the
+          addresses that provided the liquidity, paying them for taking on the inventory
+          risk of holding both assets.</p>
+          <h3 id="token-transfer-fees">Token transfer fees</h3>
+          <p>A small percentage charged each time a token moves between wallets. Most
+          SOLOMON-family tokens reinvest these fees into deeper liquidity and rewards.
+          Exceptions exist in our custom designs where movement between dedicated
+          system contracts is exempt so internal routing is not double-taxed.</p>
+          <h3 id="flex-reflections">Flex (reflections)</h3>
+          <p>A reward style where simply holding a token automatically grants you a share
+          of fees or new emissions based on your balance — the token &quot;flexes&quot; returns
+          to holders without requiring active staking.</p>
+          <h3 id="liquidity-in-defi">Liquidity (in DeFi)</h3>
+          <p>The depth of inventory available for trades at a given price. Deeper
+          liquidity means smaller slippage on a given trade size and a tighter market
+          overall.</p>
+          <h3 id="liquidity-positions">Liquidity positions</h3>
+          <p>A specific price range between two assets in a pool where you have committed
+          inventory to trade. Outside the range, your position sits fully in one asset;
+          inside, you earn fees as trades pass through.</p>
+          <h3 id="supply">Supply</h3>
+          <p>The total number of tokens minted (or in circulation). For our designs, the
+          way supply is <em>deployed</em> — into ranged liquidity rather than dormant wallets —
+          matters as much as the headline number.</p>
+          <h3 id="pure-liquid">Pure Liquid</h3>
+          <p>A token that places 100% of its supply into ranged liquidity positions in
+          secure pools from day one, with the entire backing asset committed above the
+          starting price. The token essentially only exists as buyable inventory in the
+          pool.</p>
+          <h3 id="pure-liquid-gold">Pure Liquid Gold</h3>
+          <p>A Pure Liquid token whose backing is a redeemable-for-physical-gold token
+          (PAXG, XAUT, or similar). The underlying remains in the audited custody of
+          the source issuer, while SOLOMON adds the on-chain liquidity surface.</p>
+          <h3 id="layered-liquid">Layered Liquid</h3>
+          <p>A token that is itself Pure Liquid against another Pure Liquid token — an
+          outer layer that uses an inner Pure Liquid as its backing asset and inherits
+          that inner pool&#39;s liquidity guarantees while adding its own routing,
+          distribution, and economics.</p>
+          <h3 id="buybacks-with-fees">Buybacks with fees</h3>
+          <p>Using fees collected by the system to buy the project&#39;s own token back from
+          the market, supporting the price and concentrating supply held by the
+          protocol or its partners.</p>
+          <h3 id="lp-with-fees">LP with fees</h3>
+          <p>Using fees to add the project&#39;s token (and a matching asset) back into
+          liquidity pools, deepening the very markets that earn the fees in the first
+          place.</p>
+          <h3 id="inflated-rewards-tokens">Inflated rewards tokens</h3>
+          <p>Tokens earmarked for ecosystem rewards that are emitted (inflated) into the
+          supply over time as incentives. They begin without backing and are
+          progressively backed as fees from the wider ecosystem flow in.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="info.html">Types of Gold</a> ·
+      <a href="types-of-tokens.html">Types of Tokens</a> ·
+      <a href="/info" data-gated-target="/info">Investor Info</a> ·
+      <a href="legal.html">Legal Disclaimers</a> ·
+      <a href="new-earth.html">Solomon's New Earth</a>
+    </p>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/gate.js" defer></script>
+</body>
+</html>

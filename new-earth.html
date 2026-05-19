@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solomon&apos;s New Earth | gold.com.vc</title>
+  <meta name="description" content="How SOLOMON reinvests transfer fees into liquidity (&quot;gilding&quot;), cross-chain coverage via LayerZero from Solana, and why hard-asset rails matter amid global debt trends.">
+  <title>Solomon's New Earth | gold.com.vc</title>
   <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
@@ -21,25 +22,28 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="info.html">Types of Gold</a>
-      <a href="/contract" data-gated-target="/contract">Contract</a>
+      <a href="types-of-tokens.html">Types of Tokens</a>
+      <a href="generating-wealth.html">Generating Wealth</a>
       <a href="legal.html">Legal Disclaimers</a>
-      <a href="new-earth.html" class="nav-cta">Solomon&apos;s New Earth</a>
+      <a href="new-earth.html" class="nav-cta">Solomon's New Earth</a>
     </div>
   </nav>
 
   <main class="page-main">
-    <span class="page-eyebrow">SOLOMON&apos;S NEW EARTH</span>
-    <h1>Solomon&apos;s New Earth</h1>
-    <p>
-      Half of the collected transfer fee is used to &quot;gild&quot; assets by providing liquidity into new pools. This expands
-      real market routes and increases the usefulness of SOLOMON across both gold and crypto markets.
-    </p>
-    <p>
-      Our purpose is concise: improve the global economy and stabilize the wealth of the world by linking hard-asset
-      liquidity to systems that are currently stressed by compounding government debt dynamics.
-    </p>
-
-    <h2>Purposes</h2>
+    <span class="page-eyebrow">SOLOMON'S NEW EARTH</span>
+    <h1 id="solomons-new-earth">Solomon&#39;s New Earth</h1>
+    <p>Half of the collected transfer fee is reinvested to &quot;gild&quot; the system:
+    capital is deployed into new and deeper liquidity pools so swaps and bridges
+    face tighter paths. That expands real routes and makes SOLOMON more usable
+    across gold- and crypto-denominated markets (see mechanics on
+    <a href="info.html">Types of Gold</a> and terms in <a href="legal.html">Legal Disclaimers</a>).</p>
+    <p>The purpose is concise: connect audited hard-asset liquidity to digital
+    markets at a time when aggregate debt stocks remain historically large
+    relative to world GDP — themes the IMF tracks in its
+    <a href="https://www.imf.org/en/blogs/articles/2025/09/17/global-debt-remains-above-235-of-world-gdp">Global Debt Database / Fiscal analysis</a>.
+    SOLOMON does not fix macro policy; it is infrastructure that makes
+    gold-linked value easier to move and price on-chain.</p>
+    <h2 id="purposes">Purposes</h2>
     <div class="content-table-wrap">
       <table class="content-table">
         <thead>
@@ -57,19 +61,19 @@
               across chains.
             </td>
             <td>
-              Strengthens global economic stability by reducing fragmentation between traditional value stores and digital
-              capital markets.
+              Cuts friction between traditional store-of-value holdings and on-chain capital markets so gold-linked tokens can
+              clear and compose where traders and treasuries already operate.
             </td>
           </tr>
           <tr>
-            <td>Back national debt with gold anchors</td>
+            <td>Gold-linked references for large balance sheets</td>
             <td>
-              Build transparent gold-linked liquidity rails that can support debt frameworks with harder collateral
-              reference points.
+              Build transparent gold-linked liquidity rails that treasuries, funds, and protocols can use alongside
+              fiat-denominated books—optional collateral and pricing references, not a replacement for legal sovereign issuance.
             </td>
             <td>
-              Helps stabilize long-horizon wealth by countering debt systems designed to collapse under compounding
-              obligations.
+              As interest burdens and rollover schedules pressure public and private balance sheets (standard fiscal-risk
+              topics in IMF and central-bank research), auditable scarce assets can add a verifiable axis next to nominal debt.
             </td>
           </tr>
           <tr>
@@ -77,8 +81,11 @@
             <td>
               <p>
                 SOLOMON brings gold-backed exposure where people already transact.
-                <strong>Solana mainnet</strong> is the LayerZero OApp source (EID 30168). The following
-                <strong>29 EVM destinations</strong> have a verified Sol→EVM minimum canary in the operations record:
+                <strong>Solana mainnet</strong> is the LayerZero <abbr title="Omnichain application">OApp</abbr> source;
+                endpoint id <strong>30168</strong> is the Solana mainnet EID in LayerZero's
+                <a href="https://docs.layerzero.network/v2/deployments/chains/solana" target="_blank" rel="noopener">V2 Solana deployment docs</a>
+                (devnet uses the <code>40xxx</code> testnet band). The following <strong>28 EVM destinations</strong> had a
+                verified Sol&rarr;EVM minimum canary in this project's internal operations record at the time this page was updated:
               </p>
               <ul class="solomon-chain-list">
                 <li>Ethereum</li>
@@ -112,8 +119,10 @@
                 <li>Stable</li>
               </ul>
               <p class="chain-list-note">
-                <strong>Excluded from this list:</strong> Flare (EID 30295) and Hedera (EID 30316) are deployed but had no
-                successful Sol→EVM min canary in the ops record at the time of this page.
+                <strong>Excluded from this list:</strong> Flare (<a href="https://docs.layerzero.network/v2/deployments/chains/flare" target="_blank" rel="noopener">EID 30295</a>) and Hedera
+                (<a href="https://docs.layerzero.network/v2/deployments/chains/hedera" target="_blank" rel="noopener">EID 30316</a>) appear in LayerZero's chain registry but had no successful Sol&rarr;EVM min canary in the ops record at the time of this page.
+                Cross-check live configuration in LayerZero's
+                <a href="https://docs.layerzero.network/v2/deployments/deployed-contracts" target="_blank" rel="noopener">deployed endpoints</a> before integrating.
               </p>
             </td>
             <td>
@@ -125,24 +134,30 @@
       </table>
     </div>
 
-    <h2>Author and Context</h2>
-    <p>
-      The author of this project also created a Global Debt Reset plan and wrote the Web 4 manifesto.
-      Read them:
-      <a href="https://github.com/dougbutner/web-4" target="_blank" rel="noopener">Web 4 (GitHub)</a>.
-    </p>
-    <p>
-      On XPR (top-50 TVL), the author coded the contract for reflexive reward tech, creating XPR Network's highest-volume community
-      token—holders choose among 20+ reward tokens; see
-      <a href="https://alcor.exchange/v/xpr/analytics/tokens/easy-mon3y" target="_blank" rel="noopener">EASY on Alcor</a>.
-    </p>
+    <h2 id="author-and-context">Author and Context</h2>
+    <p>The author maintains the
+    <a href="https://github.com/dougbutner/web-4">Web 4</a> manifesto and a
+    <a href="https://github.com/dougbutner/web-4/tree/master/Global-Debt-Reset">Global Debt Reset</a>
+    outline in that repository (conceptual documents, not financial advice).</p>
+    <p>On <a href="https://xprnetwork.org/">XPR Network</a>, the author shipped the smart
+    contract behind EASY — a reflexive-reward community token on Alcor where
+    transfer-fee mechanics feed liquidity and holder-directed reward routes
+    (community discussion:
+    <a href="https://www.reddit.com/r/XPRNetwork/comments/1ohumbv/what_is_easy/">r/XPRNetwork</a>);
+    analytics:
+    <a href="https://alcor.exchange/v/xpr/analytics/tokens/easy-mon3y">EASY on Alcor</a>.
+    Network scale moves with markets; see
+    <a href="https://defillama.com/chain/xpr-network">DefiLlama: XPR Network</a> for
+    current TVL context.</p>
+
   </main>
 
   <footer class="site-footer">
     <p>
       <a href="info.html">Types of Gold</a> ·
+      <a href="types-of-tokens.html">Types of Tokens</a> ·
+      <a href="generating-wealth.html">Generating Wealth</a> ·
       <a href="/info" data-gated-target="/info">Investor Info</a> ·
-      <a href="/contract" data-gated-target="/contract">Contract</a> ·
       <a href="legal.html">Legal Disclaimers</a>
     </p>
   </footer>
