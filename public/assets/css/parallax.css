@@ -1,0 +1,19 @@
+/* Lightweight parallax helpers — motion applied via JS translate3d */
+
+[data-parallax].has-parallax {
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  [data-parallax] {
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none !important;
+    will-change: auto;
+  }
+}

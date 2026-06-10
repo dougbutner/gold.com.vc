@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="morpho-theme">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {{HEAD_META}}
   <title>{{TITLE}}</title>
   <link rel="icon" href="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/main/SOLOMON-logo-v2-1080.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/morpho.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/parallax.css">
 </head>
-<body class="{{BODY_CLASS}}">
+<body class="morpho-layout {{BODY_CLASS}}">
+<div class="m-layout">
+
 {{NAV}}
 
   <main class="{{MAIN_CLASS}}">
@@ -20,7 +24,10 @@
 
 {{FOOTER}}
 
-  <script src="assets/js/nav.js" defer></script>
-  <script src="assets/js/gate.js" defer></script>
+</div>
+
+  <script src="/assets/js/gate.js" defer></script>
+  <script src="/assets/js/morpho.js" defer></script>
+  <script src="/assets/js/parallax.js" defer></script>
 </body>
 </html>
